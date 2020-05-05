@@ -81,21 +81,20 @@ int main()
 					window.close();
 					break;
 				
-				case Keyboard::Left:
-					pac.movePacman('L', maze.bitmap[21][19]);
+				/*case Keyboard::Left:
+					pac.movePacman('L',bitmap[21][19]);
 					break;
-
-	///*		case Keyboard::Right:
-	//				pac.movePacman('R', array);
-	//				break;
-	//			case Keyboard::Up:
-	//				pac.movePacman('U', array);
-	//				break;
-	//			case Keyboard::Down:
-	//			pac.movePacman('D', array);
-	//				break;
+				case Keyboard::Right:
+					pac.movePacman('R', maze.bitmap[21][19]);
+					break;
+				case Keyboard::Up:
+					pac.movePacman('U', maze.bitmap[21][19]);
+					break;
+				case Keyboard::Down:
+					pac.movePacman('D', maze.bitmap[21][19]);
+					break;
 				default:
-					break;
+					break;*/
 				}
 			}
 

@@ -10,19 +10,19 @@ Sprite Pacman::getPacmanSprite()
 {
 	return pacman;
 }
-//int Pacman::getScore()
-//{
-//	return score;
-//}
-//void Pacman::updateScore()
-//{
-//	if (score >= 10000)
-//		lives++;
-//}
-//int Pacman::getLives()
-//{
-//	return lives;
-//}
+int Pacman::getScore()
+{
+	return score;
+}
+void Pacman::updateScore()
+{
+	if (score >= 10000)
+		lives++;
+}
+int Pacman::getLives()
+{
+	return lives;
+}
 //void Pacman::updateLives()
 //{
 //	if (lives < 1)
@@ -135,17 +135,7 @@ void Pacman::movePacman(char direction, int bitmap[21][19])
 ////		{
 ////			//if my user pressed a button on their keyboard
 ////			if (event.type == Event::KeyPressed)
-////			{
-////				//what is the button they pressed?
-////
-////				switch (event.key.code)
-////				{
-////				case Keyboard::Escape:
-////					window.close();
-////					break;
-////
 ////			
-////				}
 ////			}
 ////		}
 ////		// CLear screen
