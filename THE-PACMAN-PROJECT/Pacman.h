@@ -23,7 +23,7 @@ public:
 	void updateLives();
 
 	Sprite getPacmanSprite();
-	//void movePacman(char direction, int array[][]);
+	void movePacman(char direction, int bitmap[21][19]);
 	//void eat(ghost g);
 	//void eat(pellet pell);
 };

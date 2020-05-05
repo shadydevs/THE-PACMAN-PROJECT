@@ -33,40 +33,42 @@ Sprite Pacman::getPacmanSprite()
 //	if (eatenPellets == )
 //		//you won!
 //}
-//void Pacman::movePacman(char direction, int array[][])
-//{
-//	switch (direction)
-//		case 'L'
-//		while (array[posI][posJ - 1] != -1)
-//		{
-//			pacman.move(-100, 0);
-//			posJ--;
-//		}
-//	break;
-//	case 'R'
-//		while (array[posI][posJ + 1] != -1)
-//		{
-//			pacman.move(100, 0);
-//			posJ++;
-//		}
-//	break;
-//	case 'U'
-//		while (array[posI - 1][posJ] != -1)
-//		{
-//			pacman.move(0, -100);
-//			posI--;
-//		}
-//	break;
-//	case 'D'
-//		while (array[posI + 1][posJ] != -1)
-//		{
-//			pacman.move(0, 100);
-//			posI++;
-//		}
-//	break;
-//	default:
-//		break;
-//}
+void Pacman::movePacman(char direction, int bitmap[21][19])
+{
+	switch (direction)
+	{
+	case 'L':
+		while (bitmap[posI][posJ - 1] != -1)
+		{
+			pacman.move(-100, 0);
+			posJ--;
+		}
+		break;
+	case 'R':
+		while (bitmap[posI][posJ + 1] != -1)
+		{
+			pacman.move(100, 0);
+			posJ++;
+		}
+		break;
+	case 'U':
+		while (bitmap[posI - 1][posJ] != -1)
+		{
+			pacman.move(0, -100);
+			posI--;
+		}
+		break;
+	case 'D':
+		while (bitmap[posI + 1][posJ] != -1)
+		{
+			pacman.move(0, 100);
+			posI++;
+		}
+		break;
+	default:
+		break;
+	}
+}
 //void Pacman::eat(ghost g[])
 //{
 //	for (int i = 0; i < 4; i++)
@@ -122,9 +124,7 @@ Sprite Pacman::getPacmanSprite()
 ////	RenderWindow game(Videomode(800, 600), "Pacman");
 ////
 ////	//declare all of my variables that I need. Do any initializations here.
-////
-////
-////
+
 ////	// Start the game loop -- this is where my logic happens
 ////	while (game.isOpen())
 ////	{
@@ -144,20 +144,7 @@ Sprite Pacman::getPacmanSprite()
 ////					window.close();
 ////					break;
 ////
-////				case Keyboard::Left:
-////					pac.movePlayer('L', array)
-////						break;
-////				case Keyboard::Right:
-////					pac.movePlayer('R', array)
-////						break;
-////				case Keyboard::Up:
-////					pac.movePlayer('U', array)
-////						break;
-////				case Keyboard::Down:
-////					pac.movePlayer('D', array)
-////						break;
-////				default:
-////					break;
+////			
 ////				}
 ////			}
 ////		}

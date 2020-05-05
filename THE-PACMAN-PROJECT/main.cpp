@@ -73,13 +73,33 @@ int main()
         {
             if (evnt.type == Event::Closed)
                 window.close();
+			if (evnt.type == Event::KeyPressed)
+			{
+				switch (evnt.key.code)
+				{
+				case Keyboard::Escape:
+					window.close();
+					break;
+				
+				case Keyboard::Left:
+					pac.movePacman('L', maze.bitmap[21][19]);
+					break;
 
+	///*		case Keyboard::Right:
+	//				pac.movePacman('R', array);
+	//				break;
+	//			case Keyboard::Up:
+	//				pac.movePacman('U', array);
+	//				break;
+	//			case Keyboard::Down:
+	//			pac.movePacman('D', array);
+	//				break;
+				default:
+					break;
+				}
+			}
 
         }
-
-        //pac.move();
-
-
 
         //if (collide(pac, ghostsArr) == 1) {
         //    pac.eat(ghost);
