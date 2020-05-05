@@ -81,8 +81,8 @@ int main()
 					window.close();
 					break;
 				
-				/*case Keyboard::Left:
-					pac.movePacman('L',bitmap[21][19]);
+				case Keyboard::Left:
+					pac.movePacman('L', maze.bitmap);
 					break;
 				case Keyboard::Right:
 					pac.movePacman('R', maze.bitmap[21][19]);
@@ -94,7 +94,7 @@ int main()
 					pac.movePacman('D', maze.bitmap[21][19]);
 					break;
 				default:
-					break;*/
+					break;
 				}
 			}
 
