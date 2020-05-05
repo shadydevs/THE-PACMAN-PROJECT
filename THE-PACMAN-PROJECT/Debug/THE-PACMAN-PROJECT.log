@@ -1,9 +1,23 @@
-﻿  main.cpp
+﻿  Animation.cpp
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\Animation.cpp(9,38): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\Animation.cpp(10,39): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  Character.cpp
+  Clock.cpp
+  ghost.cpp
+  main.cpp
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\main.cpp(44,35): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
   Maze.cpp
-C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\main.cpp(44,35): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
-C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Maze.cpp(34,90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\Maze.cpp(34,90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\Maze.cpp(34,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Pacman.cpp
   Pellet.cpp
   Generating Code...
-C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Maze.cpp(34,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-Maze.obj : error LNK2005: "int (* bitmap)[19]" (?bitmap@@3PAY0BD@HA) already defined in main.obj
-C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\Debug\THE-PACMAN-PROJECT.exe : fatal error LNK1169: one or more multiply defined symbols found
+  THE-PACMAN-PROJECT.vcxproj -> C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\Debug\THE-PACMAN-PROJECT.exe

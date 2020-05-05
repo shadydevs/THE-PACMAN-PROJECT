@@ -85,13 +85,13 @@ int main()
 					pac.movePacman('L', maze.bitmap);
 					break;
 				case Keyboard::Right:
-					pac.movePacman('R', maze.bitmap[21][19]);
+					pac.movePacman('R', maze.bitmap);
 					break;
 				case Keyboard::Up:
-					pac.movePacman('U', maze.bitmap[21][19]);
+					pac.movePacman('U', maze.bitmap);
 					break;
 				case Keyboard::Down:
-					pac.movePacman('D', maze.bitmap[21][19]);
+					pac.movePacman('D', maze.bitmap);
 					break;
 				default:
 					break;
