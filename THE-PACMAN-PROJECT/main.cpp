@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <Clock.hpp>
 #include <iostream>
 #include <fstream>
 #include "Maze.h"

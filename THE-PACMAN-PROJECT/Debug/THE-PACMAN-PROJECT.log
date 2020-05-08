@@ -1,6 +1,9 @@
-﻿  Clock.cpp
+﻿  Character.cpp
   Maze.cpp
 C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Maze.cpp(34,90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Pacman.cpp
+  Pellet.cpp
+  ghost.cpp
   main.cpp
 C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Maze.cpp(34,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Generating Code...
