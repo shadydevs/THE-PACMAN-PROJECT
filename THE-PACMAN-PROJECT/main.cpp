@@ -127,7 +127,7 @@ int main()
         //}
 
         animation.Update(row, deltaTime);
-        pac.pacman.setTextureRect(animation.uvRect);
+      /*  pac.pacman.setTextureRect(animation.uvRect);*/
         window.clear();
         for (int i = 0; i < 4; i++)
         {

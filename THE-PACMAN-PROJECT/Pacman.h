@@ -11,8 +11,8 @@ class Pacman : public Character
 {
 private:
 	int score, lives;
-public:
 	Sprite pacman;
+public:
 
 	Pacman();
 	int eatenGhosts, eatenPellets;
