@@ -42,7 +42,7 @@ using namespace std;
 
 int main()
 {
-	Pacman pac;
+	
     RenderWindow window(VideoMode(712.5, 950), "PACMAN", Style::Close);
     window.setFramerateLimit(60);
 
@@ -51,7 +51,8 @@ int main()
     //int row = 0;
     //float deltaTime = 0.0f;
     //Clock clock;
-
+	Pacman pac;
+	
     ghost ghostsArr[4];
 
     //Player player;
@@ -131,7 +132,7 @@ int main()
                 window.draw(maze.mazeSprites[i][j]);
             }
         }
-
+		window.draw(pac.getPacmanSprite());
         window.display();
     }
 

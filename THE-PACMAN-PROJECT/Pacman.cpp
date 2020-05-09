@@ -3,7 +3,9 @@
 Pacman::Pacman() {
 	t.loadFromFile("data/pacman-left.png");
 	pacman.setTexture(t);
-	//pacman.setPosition(292.0f, 527.0f);
+	posI = 9; //This is the initial position of pacman
+	posJ = 15; 
+	pacman.setPosition(posI * 37.5f + 7, posJ * 37.5f + 7 + (37.5f * 2.0f));
 }
 
 Sprite Pacman::getPacmanSprite()
@@ -40,30 +42,30 @@ void Pacman::movePacman(char direction, int bitmap[][19])
 	case 'L':
 		if (bitmap[posI][posJ - 1] != -1)
 		{
-			cout << "Pacman";
+			cout << "Pacman left";
 			
-			pacman.move(-100, 0);
+			pacman.move(-37.5, 0);
 			posJ--;
 		}
 		break;
 	case 'R':
-		while (bitmap[posI][posJ + 1] != -1)
+		if (bitmap[posI][posJ + 1] != -1)
 		{
-			pacman.move(100, 0);
+			pacman.move(37.5, 0);
 			posJ++;
 		}
 		break;
 	case 'U':
-		while (bitmap[posI - 1][posJ] != -1)
+		if (bitmap[posI - 1][posJ] != -1)
 		{
-			pacman.move(0, -100);
+			pacman.move(0, -37.5);
 			posI--;
 		}
 		break;
 	case 'D':
-		while (bitmap[posI + 1][posJ] != -1)
+		if (bitmap[posI + 1][posJ] != -1)
 		{
-			pacman.move(0, 100);
+			pacman.move(0, 37.5);
 			posI++;
 		}
 		break;
