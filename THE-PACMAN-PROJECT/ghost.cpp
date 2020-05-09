@@ -40,7 +40,7 @@ public:
         ghosts[3].setTexture(forthT);
 
 
-        ghosts[0].setPosition(8 * 37.5 + (18.75f - 7.5f), 9 * 37.5 + (18.75f - 7.5) + (37.5f * 2.0f));
+        ghosts[0].setPosition(9 * 37.5 + (18.75f - 7.5f), 8 * 37.5 + (18.75f - 7.5) + (37.5f * 2.0f));
         ghosts[1].setPosition(10 * 37.5 + (18.75f - 7.5f), 9 * 37.5 + (18.75f - 7.5) + (37.5f * 2.0f));
         ghosts[2].setPosition(9 * 37.5 + (18.75f - 7.5f), 9 * 37.5 + (18.75f - 7.5) + (37.5f * 2.0f));
         ghosts[3].setPosition(8 * 37.5 + (18.75f - 7.5f), 9 * 37.5 + (18.75f - 7.5) + (37.5f * 2.0f));
