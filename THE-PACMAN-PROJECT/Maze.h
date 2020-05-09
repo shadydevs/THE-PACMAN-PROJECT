@@ -17,10 +17,10 @@ private:
 	Texture pelletT;
 	Texture tileT;
 public:
-	Pacman* pac;
+	Pacman &pac;
 	int bitmap[sizey][sizex];
 
-	Maze(string, string, string, Pacman* _pac);
+	Maze(string, string, string, Pacman& _pac);
 	Sprite mazeSprites[sizey][sizex];
 };
 

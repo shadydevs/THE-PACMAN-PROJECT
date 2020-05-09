@@ -42,8 +42,7 @@ using namespace std;
 
 int main()
 {
-	Pacman *pacmanPointer;
-	pacmanPointer = new Pacman();
+	Pacman pac;
     RenderWindow window(VideoMode(712.5, 950), "PACMAN", Style::Close);
     window.setFramerateLimit(60);
 
@@ -61,7 +60,7 @@ int main()
     //cout << "enter player name: ";
     //cin >> player.name;
 
-    Maze maze("data/maze2.txt", "data/tile.png", "data/pellet.png", pacmanPointer);
+    Maze maze("data/maze2.txt", "data/tile.png", "data/pellet.png", pac);
 
     //pac.setPosition();
 
@@ -85,16 +84,16 @@ int main()
 				
 				case Keyboard::Left:
 					cout << "hi";
-					maze.pac->movePacman('L', maze.bitmap);
+					pac.movePacman('L', maze.bitmap);
 					break;
 				case Keyboard::Right:
-					maze.pac->movePacman('R', maze.bitmap);
+					pac.movePacman('R', maze.bitmap);
 					break;
 				case Keyboard::Up:
-					maze.pac->movePacman('U', maze.bitmap);
+					pac.movePacman('U', maze.bitmap);
 					break;
 				case Keyboard::Down:
-					maze.pac->movePacman('D', maze.bitmap);
+					pac.movePacman('D', maze.bitmap);
 					break;
 				default:
 					break;
