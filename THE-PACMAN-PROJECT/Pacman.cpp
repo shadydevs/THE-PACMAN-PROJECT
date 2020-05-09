@@ -40,30 +40,29 @@ void Pacman::movePacman(char direction, int bitmap[][19])
 	switch (direction)
 	{
 	case 'L':
-		if (bitmap[posI][posJ - 1] != -1)
+		if (bitmap[posI][posJ +1] != -1)
 		{
 			cout << "Pacman left";
-			
 			pacman.move(-37.5, 0);
 			posJ--;
 		}
 		break;
 	case 'R':
-		if (bitmap[posI][posJ + 1] != -1)
+		if (bitmap[posI][posJ -1] != -1)
 		{
 			pacman.move(37.5, 0);
 			posJ++;
 		}
 		break;
 	case 'U':
-		if (bitmap[posI - 1][posJ] != -1)
+		if (bitmap[posI -1][posJ] != -1)
 		{
 			pacman.move(0, -37.5);
 			posI--;
 		}
 		break;
 	case 'D':
-		if (bitmap[posI + 1][posJ] != -1)
+		if (bitmap[posI +1][posJ] != -1)
 		{
 			pacman.move(0, 37.5);
 			posI++;
