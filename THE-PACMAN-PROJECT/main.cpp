@@ -53,7 +53,8 @@ int main()
     //Clock clock;
 	Pacman pac;
 	
-    ghost ghostsArr[4];
+    ghost ghostobj;
+    ghostobj.setghosts();
 
     //Player player;
     ofstream playersInfo;
@@ -125,6 +126,10 @@ int main()
         //pac.setTextureRect(animation.uvRect);
 
         window.clear();
+        for (int i = 0; i < 4; i++)
+        {
+            window.draw(ghostobj.ghosts[i]);
+        }
         for (int i = 0; i < sizey; i++)
         {
             for (int j = 0; j < sizex; j++)

@@ -1,2 +1,5 @@
-﻿  Pacman.cpp
+﻿  ghost.cpp
+  main.cpp
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\main.cpp(46,35): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+  Generating Code...
   THE-PACMAN-PROJECT.vcxproj -> C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\Debug\THE-PACMAN-PROJECT.exe
