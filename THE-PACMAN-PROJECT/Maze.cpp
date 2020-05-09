@@ -1,6 +1,6 @@
 #include  "Maze.h"
 //x 19, y 21
-Maze::Maze(string _BMF, string _TF, string _PF, Pacman& _pac) : pac(_pac) {		//BMF bitmapfile, TF texture file, PF pellet file.
+Maze::Maze(string _BMF, string _TF, string _PF, Pacman* _pac) : pac(_pac) {		//BMF bitmapfile, TF texture file, PF pellet file.
 
 	tileT.loadFromFile(_TF);
 	pelletT.loadFromFile(_PF);
@@ -21,10 +21,10 @@ Maze::Maze(string _BMF, string _TF, string _PF, Pacman& _pac) : pac(_pac) {		//B
 			else if (bitmap[i][j] > 0)
 			{
 				if (bitmap[i][j] == 5) {		//5 indicates position of pacman
-					pac.setposI(i);
-					pac.setposJ(j);
+					pac->setposI(i);
+					pac->setposJ(j);
 					//pac.getPacmanSprite().setPosition(100, 0);
-					mazeSprites[i][j]=pac.getPacmanSprite();
+					mazeSprites[i][j]=pac->getPacmanSprite();
 					mazeSprites[i][j].setPosition(j * 37.5f + 7, i * 37.5f + 7 + (37.5f * 2.0f));
 				}
 				else {
