@@ -3,7 +3,6 @@
 #include <fstream>
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
-#include "Pellet.cpp"
 #include "Character.h"
 using namespace sf;
 using namespace std;

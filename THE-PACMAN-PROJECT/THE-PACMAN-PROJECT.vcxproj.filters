@@ -33,9 +33,6 @@
     <ClCompile Include="Pacman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Pellet.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Clock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -54,9 +51,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Clock.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Pellet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

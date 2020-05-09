@@ -85,7 +85,6 @@ int main()
 					break;
 				
 				case Keyboard::Left:
-					cout << "hi";
 					pac.movePacman('L', maze.bitmap);
 					break;
 				case Keyboard::Right:
@@ -124,7 +123,6 @@ int main()
 
         //animation.Update(row, deltaTime);
         //pac.setTextureRect(animation.uvRect);
-
         window.clear();
         for (int i = 0; i < 4; i++)
         {

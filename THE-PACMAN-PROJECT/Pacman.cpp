@@ -1,11 +1,15 @@
 #include "Pacman.h"
 
-Pacman::Pacman() {
+Pacman::Pacman()
+{
 	t.loadFromFile("data/pacman-left.png");
 	pacman.setTexture(t);
 	posI = 15; //This is the initial position of pacman
 	posJ = 9; 
 	pacman.setPosition(posJ * 37.5f + 7, posI * 37.5f + 7 + (37.5f * 2.0f));
+	score = 0;
+	eatenPellets = 0;
+	lives = 3;
 }
 
 Sprite Pacman::getPacmanSprite()
@@ -25,14 +29,18 @@ int Pacman::getLives()
 {
 	return lives;
 }
-//void Pacman::updateLives()
-//{
-//	if (lives < 1)
-//		// game over
-//}
+void Pacman::updateLives()
+{
+	if (lives < 1)
+	{
+		cout << "You lost!";
+		pacman.setPosition(0, 0);
+		pacman.setColor(Color::Black);
+	}
+}
 //void Pacman::checkPellets()
 //{
-//	if (eatenPellets == )
+//	if (eatenPellets == 150)
 //		//you won!
 //}
 void Pacman::movePacman(char direction, int bitmap[][19])
@@ -40,15 +48,14 @@ void Pacman::movePacman(char direction, int bitmap[][19])
 	switch (direction)
 	{
 	case 'L':
-		if (bitmap[posI][posJ +1] != -1)
+		if (bitmap[posI][posJ-1] != -1)
 		{
-			cout << "Pacman left";
 			pacman.move(-37.5, 0);
 			posJ--;
 		}
 		break;
 	case 'R':
-		if (bitmap[posI][posJ -1] != -1)
+		if (bitmap[posI][posJ +1] != -1)
 		{
 			pacman.move(37.5, 0);
 			posJ++;
@@ -93,29 +100,10 @@ void Pacman::movePacman(char direction, int bitmap[][19])
 //		}
 //
 //	}
+//call updateLives
+//operator overloading in lives--
 //}
-//void Pacman::eat(pellet pell)
-//{
-//	if (collide(pac, pell) && (!pell.isEaten)) //check this
-//	{
-//		//I assummed that in the pellet structure, there is a boolean variable called power
-//		if (pell.power == true) //object is in fright mode
-//		{
-//			score = score + 50;
-//			updateScore();
-//			//remove pellet, make it an empty space
-//		}
-//		else
-//		{
-//score = score + 10;
-//			updateScore();
-//			pell.pellet.setColor(Color::Black);
-//			//remove pellet, make it an empty space
-//		}
-//		eatenPellets++;
-//		pell.isEaten = true;
-//	}
-//}
+
 
 void Pacman::eatPellet(int bitmap[][19], Sprite mazeSprites[][19])
 {
@@ -126,41 +114,8 @@ void Pacman::eatPellet(int bitmap[][19], Sprite mazeSprites[][19])
 		score = score + 10;
 		updateScore();
 		mazeSprites[posI][posJ].setColor(Color::Black);
+		if (eatenPellets == 150)
+			cout << "You won!";
+
 	}
 }
-
-////int main()
-////{
-////	pacman pac;
-////	const int rows = 10;
-////	const int columns = 10;
-////	int array[rows][columns];
-////	Sprite maze[rows][columns];
-////
-////	// Create the main window
-////	RenderWindow game(Videomode(800, 600), "Pacman");
-////
-////	//declare all of my variables that I need. Do any initializations here.
-
-////	// Start the game loop -- this is where my logic happens
-////	while (game.isOpen())
-////	{
-////		// Process events
-////		Event event;
-////
-////		while (game.pollEvent(event))
-////		{
-////			//if my user pressed a button on their keyboard
-////			if (event.type == Event::KeyPressed)
-////			
-////			}
-////		}
-////		// CLear screen
-////		game.clear();
-////		// Draw any of the things that I declared to the screen that I want to be visible
-////		game.draw(pac.getPacmanSprite());
-////		// Update the window
-////		game.display();
-////	}
-////	return 0;
-////}
