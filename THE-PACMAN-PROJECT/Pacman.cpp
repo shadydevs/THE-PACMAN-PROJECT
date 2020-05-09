@@ -2,7 +2,7 @@
 
 Pacman::Pacman()
 {
-	t.loadFromFile("data/pacman-left.png");
+	t.loadFromFile("data/pacman.png");
 	pacman.setTexture(t);
 	posI = 15; //This is the initial position of pacman
 	posJ = 9; 

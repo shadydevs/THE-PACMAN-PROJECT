@@ -7,7 +7,6 @@
 #include "Animation.h"
 #include "Character.h"
 #include "ghost.cpp"
-#include <vector>
 using namespace sf;
 using namespace std;
 
@@ -45,17 +44,18 @@ int main()
 {
     RenderWindow window(VideoMode(712.5, 950), "PACMAN", Style::Close);
     window.setFramerateLimit(60);
-    
-    //Animation animation(&Tpac, Vector2u(3, 4), 0.3f);
-    //int row = 0;
-    //float deltaTime = 0.0f;
-    //Clock clock;
+
 	Pacman pac;
+    
+    Animation animation(pac.getPacmanSprite().getTexture(), Vector2u(3, 4), 0.3f);
+    int row = 0;
+    float deltaTime = 0.0f;
+    Clock clock;
+	
 	
     ghost ghostobj;
     ghostobj.setghosts();
 	
-	/*Pellet arrayOfPellets[10];*/
     //Player player;
     ofstream playersInfo;
 

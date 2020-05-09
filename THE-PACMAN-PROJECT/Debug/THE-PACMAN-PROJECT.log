@@ -1,2 +1,21 @@
-﻿  Pacman.cpp
-  THE-PACMAN-PROJECT.vcxproj -> C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\Debug\THE-PACMAN-PROJECT.exe
+﻿  Animation.cpp
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(9,37): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(9,37): warning C4244:         with
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(9,37): warning C4244:         [
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(9,37): warning C4244:             T=int
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(9,37): warning C4244:         ]
+  ghost.cpp
+  main.cpp
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(10,38): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(10,38): warning C4244:         with
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(10,38): warning C4244:         [
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(10,38): warning C4244:             T=int
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(10,38): warning C4244:         ]
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\main.cpp(45,35): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\main.cpp(50,82): error C2664: 'Animation::Animation(Animation &&)': cannot convert argument 1 from 'const sf::Texture *' to 'sf::Texture'
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\main.cpp(50,82): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+  Maze.cpp
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.h(8,2): message : see declaration of 'Animation::Animation'
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Maze.cpp(27,90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Maze.cpp(27,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
