@@ -1,5 +1,21 @@
-﻿main.obj : error LNK2005: "public: __thiscall Pellet::Pellet(void)" (??0Pellet@@QAE@XZ) already defined in ghost.obj
-Maze.obj : error LNK2005: "public: __thiscall Pellet::Pellet(void)" (??0Pellet@@QAE@XZ) already defined in ghost.obj
-Pacman.obj : error LNK2005: "public: __thiscall Pellet::Pellet(void)" (??0Pellet@@QAE@XZ) already defined in ghost.obj
-Pellet.obj : error LNK2005: "public: __thiscall Pellet::Pellet(void)" (??0Pellet@@QAE@XZ) already defined in ghost.obj
-C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\Debug\THE-PACMAN-PROJECT.exe : fatal error LNK1169: one or more multiply defined symbols found
+﻿  Animation.cpp
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(9,38): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(9,38): warning C4244:         with
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(9,38): warning C4244:         [
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(9,38): warning C4244:             T=int
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(9,38): warning C4244:         ]
+  Maze.cpp
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(10,39): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(10,39): warning C4244:         with
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(10,39): warning C4244:         [
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(10,39): warning C4244:             T=int
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(10,39): warning C4244:         ]
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Maze.cpp(27,90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Pacman.cpp
+  Pellet.cpp
+  ghost.cpp
+  main.cpp
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Maze.cpp(27,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\main.cpp(45,35): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+  THE-PACMAN-PROJECT.vcxproj -> C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\Debug\THE-PACMAN-PROJECT.exe

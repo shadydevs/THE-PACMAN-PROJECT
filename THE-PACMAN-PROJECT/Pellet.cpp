@@ -1,7 +1,7 @@
-#include "Pellet.h"
-
-Pellet::Pellet()
-{
-	cout << "Amy";
-	isEaten = false;
-}
+//#include "Pellet.h"
+//
+//Pellet::Pellet()
+//{
+//	cout << "Amy";
+//	isEaten = false;
+//}

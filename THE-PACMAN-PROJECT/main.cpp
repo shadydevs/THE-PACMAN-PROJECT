@@ -42,10 +42,8 @@ using namespace std;
 
 int main()
 {
-	
     RenderWindow window(VideoMode(712.5, 950), "PACMAN", Style::Close);
     window.setFramerateLimit(60);
-
     
     //Animation animation(&Tpac, Vector2u(3, 4), 0.3f);
     //int row = 0;
@@ -56,7 +54,7 @@ int main()
     ghost ghostobj;
     ghostobj.setghosts();
 
-	Pellet arrayOfPellets[40];
+	/*Pellet arrayOfPellets[40];*/
     //Player player;
     ofstream playersInfo;
 
