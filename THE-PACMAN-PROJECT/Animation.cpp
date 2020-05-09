@@ -1,8 +1,8 @@
 #include "animation.h"
-Animation::Animation(Texture* texture, Vector2u imageCount, float switchTime) 
+Animation::Animation(Texture* texture, Vector2u _imageCount, float _switchTime) 
 {
-	this->imageCount = imageCount;
-	this->switchTime = switchTime;
+	imageCount = _imageCount;
+	switchTime = _switchTime;
 	totalTime = 0.0f;
 	currentImage.x = 0;
 

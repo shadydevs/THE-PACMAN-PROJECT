@@ -10,9 +10,10 @@ using namespace std;
 class Pacman : public Character
 {
 private:
-	Sprite pacman;
 	int score, lives;
 public:
+	Sprite pacman;
+
 	Pacman();
 	int eatenGhosts, eatenPellets;
 	

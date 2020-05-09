@@ -46,8 +46,9 @@ int main()
     window.setFramerateLimit(60);
 
 	Pacman pac;
-    
-    Animation animation(pac.getPacmanSprite().getTexture(), Vector2u(3, 4), 0.3f);
+    Texture pacT;
+    pacT.loadFromFile("data/pacman.png");
+    Animation animation(&pacT, Vector2u(3, 4), 0.3f);
     int row = 0;
     float deltaTime = 0.0f;
     Clock clock;
@@ -69,7 +70,7 @@ int main()
 
     while (window.isOpen())
     {
-        //deltaTime = clock.restart().asSeconds();
+        deltaTime = clock.restart().asSeconds();
 
         Event evnt;
         while (window.pollEvent(evnt))
@@ -86,14 +87,18 @@ int main()
 				
 				case Keyboard::Left:
 					pac.movePacman('L', maze.bitmap);
+                    row = 0;
 					break;
 				case Keyboard::Right:
 					pac.movePacman('R', maze.bitmap);
+                    row = 1;
 					break;
 				case Keyboard::Up:
+                    row = 2;
 					pac.movePacman('U', maze.bitmap);
 					break;
 				case Keyboard::Down:
+                    row = 3;
 					pac.movePacman('D', maze.bitmap);
 					break;
 				default:
@@ -121,8 +126,8 @@ int main()
             */
         //}
 
-        //animation.Update(row, deltaTime);
-        //pac.setTextureRect(animation.uvRect);
+        animation.Update(row, deltaTime);
+        pac.pacman.setTextureRect(animation.uvRect);
         window.clear();
         for (int i = 0; i < 4; i++)
         {
@@ -135,7 +140,7 @@ int main()
                 window.draw(maze.mazeSprites[i][j]);
             }
         }
-		window.draw(pac.getPacmanSprite());
+		window.draw(pac.pacman);
         window.display();
     }
 

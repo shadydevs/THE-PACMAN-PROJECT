@@ -2,8 +2,8 @@
 
 Pacman::Pacman()
 {
-	t.loadFromFile("data/pacman.png");
-	pacman.setTexture(t);
+	//t.loadFromFile("data/pacman.png");
+	//pacman.setTexture(t);
 	posI = 15; //This is the initial position of pacman
 	posJ = 9; 
 	pacman.setPosition(posJ * 37.5f + 7, posI * 37.5f + 7 + (37.5f * 2.0f));
