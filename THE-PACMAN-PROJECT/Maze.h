@@ -13,10 +13,11 @@ class Maze
 {
 private:
 	ifstream bitmapFile;
-	Pacman& pac;
+	
 	Texture pelletT;
 	Texture tileT;
 public:
+	Pacman& pac;
 	int bitmap[sizey][sizex];
 
 	Maze(string, string, string, Pacman& _pac);

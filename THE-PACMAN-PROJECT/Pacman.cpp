@@ -33,13 +33,15 @@ int Pacman::getLives()
 //	if (eatenPellets == )
 //		//you won!
 //}
-void Pacman::movePacman(char direction, int bitmap[21][19])
+void Pacman::movePacman(char direction, int bitmap[][19])
 {
 	switch (direction)
 	{
 	case 'L':
-		while (bitmap[posI][posJ - 1] != -1)
+		if (bitmap[posI][posJ - 1] != -1)
 		{
+			cout << "Pacman";
+			
 			pacman.move(-100, 0);
 			posJ--;
 		}

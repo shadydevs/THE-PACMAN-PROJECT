@@ -24,7 +24,7 @@ Maze::Maze(string _BMF, string _TF, string _PF, Pacman& _pac) : pac(_pac) {		//B
 					pac.setposI(i);
 					pac.setposJ(j);
 					//pac.getPacmanSprite().setPosition(100, 0);
-					mazeSprites[i][j].setTexture(*pac.getPacmanSprite().getTexture());
+					mazeSprites[i][j]=pac.getPacmanSprite();
 					mazeSprites[i][j].setPosition(j * 37.5f + 7, i * 37.5f + 7 + (37.5f * 2.0f));
 				}
 				else {

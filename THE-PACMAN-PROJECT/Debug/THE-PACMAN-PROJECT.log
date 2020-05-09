@@ -1,11 +1,3 @@
-﻿  Character.cpp
-  Maze.cpp
-C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Maze.cpp(34,90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Pacman.cpp
-  Pellet.cpp
-  ghost.cpp
-  main.cpp
-C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Maze.cpp(34,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Generating Code...
-C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\main.cpp(44,35): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+﻿  main.cpp
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\main.cpp(45,35): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
   THE-PACMAN-PROJECT.vcxproj -> C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\Debug\THE-PACMAN-PROJECT.exe

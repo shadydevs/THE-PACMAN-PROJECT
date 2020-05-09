@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include <Clock.hpp>
+//#include <Clock.hpp>
 #include <iostream>
 #include <fstream>
 #include "Maze.h"
@@ -77,12 +77,13 @@ int main()
 			if (evnt.type == Event::KeyPressed)
 			{
 				switch (evnt.key.code)
-				{
+			{
 				case Keyboard::Escape:
 					window.close();
 					break;
 				
 				case Keyboard::Left:
+					cout << "hi";
 					pac.movePacman('L', maze.bitmap);
 					break;
 				case Keyboard::Right:
@@ -123,7 +124,6 @@ int main()
         //pac.setTextureRect(animation.uvRect);
 
         window.clear();
-        //window.draw(pac.getPacmanSprite());
         for (int i = 0; i < sizey; i++)
         {
             for (int j = 0; j < sizex; j++)
