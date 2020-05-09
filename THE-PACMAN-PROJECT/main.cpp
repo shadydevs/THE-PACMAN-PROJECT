@@ -7,6 +7,7 @@
 #include "Animation.h"
 #include "Character.h"
 #include "ghost.cpp"
+#include <vector>
 using namespace sf;
 using namespace std;
 
@@ -53,8 +54,8 @@ int main()
 	
     ghost ghostobj;
     ghostobj.setghosts();
-
-	/*Pellet arrayOfPellets[40];*/
+	
+	/*Pellet arrayOfPellets[10];*/
     //Player player;
     ofstream playersInfo;
 
@@ -102,7 +103,7 @@ int main()
 			}
 
         }
-
+		pac.eatPellet(maze.bitmap, maze.mazeSprites);
         //if (collide(pac, ghostsArr) == 1) {
         //    pac.eat(ghost);
         //}

@@ -20,6 +20,7 @@ public:
 	int getScore();
 	void updateScore();
 	int getLives();
+	void eatPellet(int bitmap[][19], Sprite mazeSprites[][19]);
 	void updateLives();
 
 	Sprite getPacmanSprite();

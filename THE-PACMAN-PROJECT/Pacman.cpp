@@ -3,9 +3,9 @@
 Pacman::Pacman() {
 	t.loadFromFile("data/pacman-left.png");
 	pacman.setTexture(t);
-	posI = 9; //This is the initial position of pacman
-	posJ = 15; 
-	pacman.setPosition(posI * 37.5f + 7, posJ * 37.5f + 7 + (37.5f * 2.0f));
+	posI = 15; //This is the initial position of pacman
+	posJ = 9; 
+	pacman.setPosition(posJ * 37.5f + 7, posI * 37.5f + 7 + (37.5f * 2.0f));
 }
 
 Sprite Pacman::getPacmanSprite()
@@ -107,7 +107,7 @@ void Pacman::movePacman(char direction, int bitmap[][19])
 //		}
 //		else
 //		{
-//			score = score + 10;
+//score = score + 10;
 //			updateScore();
 //			pell.pellet.setColor(Color::Black);
 //			//remove pellet, make it an empty space
@@ -116,6 +116,19 @@ void Pacman::movePacman(char direction, int bitmap[][19])
 //		pell.isEaten = true;
 //	}
 //}
+
+void Pacman::eatPellet(int bitmap[][19], Sprite mazeSprites[][19])
+{
+	if (bitmap[posI][posJ] == 1)
+	{
+		bitmap[posI][posJ] = 0;
+		eatenPellets++;
+		score = score + 10;
+		updateScore();
+		mazeSprites[posI][posJ].setColor(Color::Black);
+	}
+}
+
 ////int main()
 ////{
 ////	pacman pac;
