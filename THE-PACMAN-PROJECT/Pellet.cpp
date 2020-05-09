@@ -1,10 +1,6 @@
-//struct Pellet
+//#include "Pellet.h"
+//
+//Pellet::Pellet()
 //{
-//	CircleShape pellet;
-//	bool power;
-//	bool isEaten;
-//	Pellet()
-//	{
-//		isEaten = false;
-//	}
-//};
+//	isEaten = false;
+//}

@@ -166,6 +166,7 @@
     <ClInclude Include="Clock.h" />
     <ClInclude Include="Maze.h" />
     <ClInclude Include="Pacman.h" />
+    <ClInclude Include="Pellet.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

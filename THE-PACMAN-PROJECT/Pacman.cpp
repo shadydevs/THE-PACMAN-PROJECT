@@ -109,6 +109,7 @@ void Pacman::movePacman(char direction, int bitmap[][19])
 //		{
 //			score = score + 10;
 //			updateScore();
+//			pell.pellet.setColor(Color::Black);
 //			//remove pellet, make it an empty space
 //		}
 //		eatenPellets++;
