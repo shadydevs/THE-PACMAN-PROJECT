@@ -56,6 +56,7 @@ int main()
     ghost ghostobj;
     ghostobj.setghosts();
 
+	Pellet arrayOfPellets[40];
     //Player player;
     ofstream playersInfo;
 

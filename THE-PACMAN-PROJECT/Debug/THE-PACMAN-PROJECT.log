@@ -1,3 +1,5 @@
-﻿  main.cpp
-C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\main.cpp(46,35): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
-  THE-PACMAN-PROJECT.vcxproj -> C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\Debug\THE-PACMAN-PROJECT.exe
+﻿main.obj : error LNK2005: "public: __thiscall Pellet::Pellet(void)" (??0Pellet@@QAE@XZ) already defined in ghost.obj
+Maze.obj : error LNK2005: "public: __thiscall Pellet::Pellet(void)" (??0Pellet@@QAE@XZ) already defined in ghost.obj
+Pacman.obj : error LNK2005: "public: __thiscall Pellet::Pellet(void)" (??0Pellet@@QAE@XZ) already defined in ghost.obj
+Pellet.obj : error LNK2005: "public: __thiscall Pellet::Pellet(void)" (??0Pellet@@QAE@XZ) already defined in ghost.obj
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\Debug\THE-PACMAN-PROJECT.exe : fatal error LNK1169: one or more multiply defined symbols found
