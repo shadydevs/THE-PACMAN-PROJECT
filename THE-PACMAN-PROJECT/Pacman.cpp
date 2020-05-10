@@ -105,7 +105,7 @@ void Pacman::eat(ghost g)
 			if (superModeOn)	//if pacman is in fright mode
 			{
 				g.ghosts[i].setPosition(g.startPosition[i]);
-				g.posIs[i] = 
+				g.posIs[i] = 7; g.posJs[i] = 9;
 				score = score + 200 * eatenGhosts;//200 for first, 400 for second, 800 for third, 1600 for forth
 				updateScore();
 				eatenGhosts++;
