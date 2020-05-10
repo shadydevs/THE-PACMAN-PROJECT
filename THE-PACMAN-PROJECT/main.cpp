@@ -114,7 +114,8 @@ int main()
         for (int i = 0; i < 4; i++)
         {
             if (ghostobj.posIs[i] == pac.getposI() && ghostobj.posJs[i] == pac.getposJ()) {
-
+                pac.eat(ghostobj, i);
+                cout << pac.getScore() << endl;
             }
         }
 

@@ -96,28 +96,25 @@ void Pacman::movePacman(int bitmap[21][19])
 }
 
 //error
-void Pacman::eat(ghost g)
+void Pacman::eat(ghost g, int i)
 {
-	for (int i = 0; i < 4; i++)
+	if (superModeOn)	//if pacman is in fright mode
 	{
-		if (pacman.getGlobalBounds().intersects(g.ghosts[i].getGlobalBounds()))
-		{
-			if (superModeOn)	//if pacman is in fright mode
-			{
-				g.ghosts[i].setPosition(g.startPosition[i]);
-				g.posIs[i] = 7; g.posJs[i] = 9;
-				score = score + 200 * eatenGhosts;//200 for first, 400 for second, 800 for third, 1600 for forth
-				updateScore();
-				eatenGhosts++;
-			}
-			else
-			{
-				lives--;
-				updateLives();
-				pacman.setPosition(292, 527); // return to initial position
-
-			}
-		}
+		g.posIs[i] = 7; g.posJs[i] = 9;
+		g.ghosts[i].setPosition(Vector2f(g.posJs[i] * 37.5 + (18.75f - 7.5f), g.posIs[i] * 37.5 + (18.75f - 7.5) + (37.5f * 2.0f)));
+		score = score + 200 * eatenGhosts;//200 for first, 400 for second, 800 for third, 1600 for forth
+		updateScore();
+		eatenGhosts++;
+	}
+	else
+	{
+		lives--;
+		updateLives();
+		// return to initial position
+		posI = 15; //This is the initial position of pacman
+		posJ = 9;
+		pacman.setPosition(posJ * 37.5f + 7, posI * 37.5f + 7 + (37.5f * 2.0f));
+		direction = Vector2i(0, 0);
 	}
 }
 
