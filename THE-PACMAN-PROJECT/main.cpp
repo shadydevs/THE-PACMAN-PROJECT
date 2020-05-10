@@ -140,7 +140,7 @@ int main()
                 window.draw(maze.mazeSprites[i][j]);
             }
         }
-		window.draw(pac.pacman);
+		window.draw(pac.getPacmanSprite());
         window.display();
     }
 
