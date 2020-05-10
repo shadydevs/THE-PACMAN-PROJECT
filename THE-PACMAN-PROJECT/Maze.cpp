@@ -1,6 +1,6 @@
 #include  "Maze.h"
 //x 19, y 21
-Maze::Maze(string _BMF, string _TF, string _PF, Pacman& _pac) : pac(_pac) {		//BMF bitmapfile, TF texture file, PF pellet file.
+Maze::Maze(string _BMF, string _TF, string _PF) {		//BMF bitmapfile, TF texture file, PF pellet file.
 
 	tileT.loadFromFile(_TF);
 	pelletT.loadFromFile(_PF);

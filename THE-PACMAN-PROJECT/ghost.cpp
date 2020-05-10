@@ -1,36 +1,70 @@
-#include"Animation.h"
-#include"Character.h"
-#include"Pacman.h"
-#include <SFML/Graphics.hpp>
-#include "Animation.h"
-#include <iostream>
-#include <fstream>
-using namespace sf;
-class ghost : public Character
+#include "ghost.h"
+
+ghost::ghost() 
 {
-private:
-	Sprite blinky, inky, clyde, forth;
+	posIs[0] = 7; posJs[0] = 9;
+	posIs[1] = 9; posJs[1] = 10;
+	posIs[2] = 9; posJs[2] = 9;
+	posIs[3] = 9; posJs[3] = 8;
 
-	Texture blinkyT, inkyT, clydeT, forthT;
-public:
-	Sprite ghosts[4] = { blinky, inky, clyde, forth };
-	Vector2i direction[4];
-	int posIs[4];
-	int posJs[4];
-	ghost() 
+	direction[0] = Vector2i(-1, 0);
+	for (int i = 1; i < 4; i++)
 	{
-		for (int i = 0; i < 4; i++)
-		{
-			direction[i] = Vector2i(0, 0);
-		}
-		posIs[0] = 7; posJs[0] = 9;
-		posIs[1] = 9; posJs[1] = 10;
-		posIs[2] = 9; posJs[2] = 9;
-		posIs[3] = 9; posJs[3] = 8;
+		direction[i] = Vector2i(0, 0);
+		startPosition[i] = Vector2f(posJs[i] * 37.5 + (18.75f - 7.5f), posIs[i] * 37.5 + (18.75f - 7.5) + (37.5f * 2.0f));
+	}
 
-	};
-	void setposI(int x) { posI = x; }
-	void setposy(int y) { posJ = y; }
+	getOutScore[0] = 0;			//blinky gets out immediately
+	getOutScore[1] = 50;		//pinky gets out right after blinky so low get out score required
+	getOutScore[2] = 500;
+	getOutScore[3] = 750;
+}
+
+void ghost::setghosts()
+{
+	//i and j for he array 
+
+	blinkyT.loadFromFile("data/blinky.jpeg");
+	inkyT.loadFromFile("data/inky.jpeg");
+	clydeT.loadFromFile("data/clyde.jpeg");
+	pinkyT.loadFromFile("data/pinky.jpeg");
+	ghosts[0].setTexture(blinkyT);
+	ghosts[1].setTexture(pinkyT);
+	ghosts[2].setTexture(inkyT);
+	ghosts[3].setTexture(clydeT);
+
+	for (int i = 0; i < 4; i++)
+	{
+		ghosts[i].setPosition(posJs[i] * 37.5 + (18.75f - 7.5f), posIs[i] * 37.5 + (18.75f - 7.5) + (37.5f * 2.0f));
+	}
+}
+
+void ghost::moveGhost(int bitmap[21][19]) {
+	for (int i = 0; i < 4; i++)
+	{
+		if (bitmap[posIs[i] + direction[i].y][posJs[i] + direction[i].x] != -1)
+		{
+			ghosts[i].move(37.5 * direction[i].x, 37.5 * direction[i].y);
+			posIs[i] = posIs[i] + direction[i].y;
+			posJs[i] = posJs[i] + direction[i].x;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+	//void setposI(int x) { posI = x; }
+	//void setposy(int y) { posJ = y; }
+
+
+
 	//  int getposx() { posI; }
 	 // int getposy() { posJ; }
 	  //bool intersects(Pacman pac, ghost ghostt, int numberofghost)
@@ -40,49 +74,6 @@ public:
 	  //    else
 	  //        return false;
 	  //}
-	void setghosts()
-	{
-		//i and j for he array 
-
-		blinkyT.loadFromFile("data/blinky.jpeg");
-		inkyT.loadFromFile("data/inky.jpeg");
-		clydeT.loadFromFile("data/clyde.jpeg");
-		forthT.loadFromFile("data/pinky.jpeg");
-		ghosts[0].setTexture(blinkyT);
-		ghosts[1].setTexture(inkyT);
-		ghosts[2].setTexture(clydeT);
-		ghosts[3].setTexture(forthT);
-
-		for (int i = 0; i < 4; i++)
-		{
-			ghosts[i].setPosition(posJs[i] * 37.5 + (18.75f - 7.5f), posIs[i] * 37.5 + (18.75f - 7.5) + (37.5f * 2.0f));
-		}
-	}
-
-	void moveGhost(int bitmap[21][19]) {
-		for (int i = 0; i < 4; i++)
-		{
-			if (bitmap[posIs[i] + direction[i].y][posJs[i] + direction[i].x] != -1)
-			{
-				ghosts[i].move(37.5 * direction[i].x, 37.5 * direction[i].y);
-				posIs[i] = posIs[i] + direction[i].y;
-				posJs[i] = posJs[i] + direction[i].x;
-			}
-		}
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -194,4 +185,3 @@ public:
 	//                      if(arr[ghost.getposX][ghost.getposY+1])==-1)//arr()
 	//                      {arr[ghost.move(rand(),)}
 	//                  }*/
-};
