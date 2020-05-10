@@ -87,7 +87,6 @@ void Pacman::movePacman(int bitmap[21][19])
 		pacman.move(37.5 * this->direction.x, 37.5 * this->direction.y);
 		posI = posI + this->direction.y;
 		posJ = posJ + this->direction.x;
-		cout << getposI() << endl << getposJ() << endl;
 	}
 }
 //void Pacman::eat(ghost g[])
