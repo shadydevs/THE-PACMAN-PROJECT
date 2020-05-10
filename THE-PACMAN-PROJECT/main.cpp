@@ -53,7 +53,13 @@ int main()
     int row = 0;
     float deltaTime = 0.0f;
     Clock clock;
-	
+	/*Texture pacR;
+	pacR.loadFromFile("data/pacman-right");
+	Texture pacU;
+	pacU.loadFromFile("data/pacman-up");
+	Texture pacD;
+	pacD.loadFromFile("data/pacman-down");*/
+
     //pac.pacman.setTextureRect(animation.uvRect);
 	
     ghost ghostobj;
@@ -91,6 +97,7 @@ int main()
                     if (maze.bitmap[pac.getposI()][pac.getposJ() - 1] != -1)
                     {
                         row = 0;
+						/*pac.pacman.setTexture(&pac.getT());*/
                         pac.direction = Vector2i(-1, 0);
                     }
                     break;
@@ -98,6 +105,8 @@ int main()
                     if (maze.bitmap[pac.getposI()][pac.getposJ() + 1] != -1)
                     {
                         row = 1;
+
+						/*pac.pacman.setTexture(&pacR);*/
                         pac.direction = Vector2i(1, 0);
                     }
                     break;
@@ -105,6 +114,7 @@ int main()
                     if (maze.bitmap[pac.getposI() - 1][pac.getposJ()] != -1)
                     {
                         row = 2;
+						/*pac.pacman.setTexture(&pacU);*/
                         pac.direction = Vector2i(0, -1);
                     }
                     break;
@@ -112,6 +122,7 @@ int main()
                     if (maze.bitmap[pac.getposI() + 1][pac.getposJ()] != -1)
                     {
                         row = 3;
+						/*pac.pacman.setTexture(&pacD);*/
                         pac.direction = Vector2i(0, 1);
                     }
                     break;

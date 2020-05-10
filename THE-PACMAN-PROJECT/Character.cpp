@@ -20,3 +20,7 @@ void Character::setposJ(int j)
 {
 	posJ = j;
 }
+Texture Character::getT()
+{
+	return t;
+}

@@ -18,6 +18,7 @@ public:
 	void setposI(int i);
 	int getposJ();
 	void setposJ(int j);
+	Texture getT();
 	//virtual void eat();			//for eating pellets/ghosts/pacman (overriding)
 };
 
