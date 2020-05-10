@@ -1,5 +1,4 @@
 #include <iostream>
-#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include "ghost.h"
 using namespace sf;

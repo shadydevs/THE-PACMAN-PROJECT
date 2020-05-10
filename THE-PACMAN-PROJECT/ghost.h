@@ -11,7 +11,7 @@ private:
 public:
 
 	void BFS();
-
+	
 	Sprite ghosts[4] = { blinky, pinky, inky, clyde };
 	Vector2i direction[4];
 	Vector2f startPosition[4];

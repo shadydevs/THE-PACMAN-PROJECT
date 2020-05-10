@@ -102,11 +102,10 @@ void Pacman::eat(ghost g)
 	{
 		if (pacman.getGlobalBounds().intersects(g.ghosts[i].getGlobalBounds()))
 		{
-			if (superModeOn)
+			if (superModeOn)	//if pacman is in fright mode
 			{
 				g.ghosts[i].setPosition(g.startPosition[i]);
-
-				//if pacman is in fright mode
+				g.posIs[i] = 
 				score = score + 200 * eatenGhosts;//200 for first, 400 for second, 800 for third, 1600 for forth
 				updateScore();
 				eatenGhosts++;
