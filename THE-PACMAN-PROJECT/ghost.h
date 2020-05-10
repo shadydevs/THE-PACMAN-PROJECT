@@ -10,7 +10,7 @@ private:
 	int getOutScore[4];			//the score pac reaches when each ghost gets out of home
 public:
 
-	void BFS();
+	void BFS(int src);
 	
 	Sprite ghosts[4] = { blinky, pinky, inky, clyde };
 	Vector2i direction[4];

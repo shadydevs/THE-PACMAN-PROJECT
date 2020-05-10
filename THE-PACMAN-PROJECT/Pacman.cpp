@@ -96,7 +96,7 @@ void Pacman::movePacman(int bitmap[21][19])
 }
 
 //error
-void Pacman::eat(ghost g, int i)
+void Pacman::eat(ghost& g, int i)
 {
 	if (superModeOn)	//if pacman is in fright mode
 	{

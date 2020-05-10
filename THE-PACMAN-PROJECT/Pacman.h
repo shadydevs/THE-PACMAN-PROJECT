@@ -35,6 +35,6 @@ public:
 	void updateLives();
 	//RectangleShape getPacmanShape();
 	void movePacman(int bitmap[21][19]);
-	void eat(ghost g, int i);
+	void eat(ghost& g, int i);
 	//void eat(pellet pell);
 };
