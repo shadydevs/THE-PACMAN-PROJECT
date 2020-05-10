@@ -1,3 +1,24 @@
-﻿  main.cpp
-C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\main.cpp(45,35): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
-  THE-PACMAN-PROJECT.vcxproj -> C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\Debug\THE-PACMAN-PROJECT.exe
+﻿  Animation.cpp
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(9,38): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(9,38): warning C4244:         with
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(9,38): warning C4244:         [
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(9,38): warning C4244:             T=int
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(9,38): warning C4244:         ]
+  Character.cpp
+  ghost.cpp
+  Graph.cpp
+  main.cpp
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(10,39): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(10,39): warning C4244:         with
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(10,39): warning C4244:         [
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(10,39): warning C4244:             T=int
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Animation.cpp(10,39): warning C4244:         ]
+  Maze.cpp
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\main.cpp(45,35): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Maze.cpp(27,90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Pacman.cpp
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Maze.cpp(27,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Pacman.cpp(87,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\Pacman.cpp(87,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  THE-PACMAN-PROJECT.vcxproj -> C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\Debug\THE-PACMAN-PROJECT.exe
