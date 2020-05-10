@@ -88,28 +88,40 @@ int main()
                     break;
 
                 case Keyboard::Left:
-                    row = 0;
-                    pac.direction = Vector2i(-1, 0);
+                    if (maze.bitmap[pac.getposI()][pac.getposJ() - 1] != -1)
+                    {
+                        row = 0;
+                        pac.direction = Vector2i(-1, 0);
+                    }
                     break;
                 case Keyboard::Right:
-                    row = 1;
-                    pac.direction = Vector2i(1, 0);
+                    if (maze.bitmap[pac.getposI()][pac.getposJ() + 1] != -1)
+                    {
+                        row = 1;
+                        pac.direction = Vector2i(1, 0);
+                    }
                     break;
                 case Keyboard::Up:
-                    row = 2;
-                    pac.direction = Vector2i(0, -1);
+                    if (maze.bitmap[pac.getposI() - 1][pac.getposJ()] != -1)
+                    {
+                        row = 2;
+                        pac.direction = Vector2i(0, -1);
+                    }
                     break;
                 case Keyboard::Down:
-                    row = 3;
-                    pac.direction = Vector2i(0, 1);
+                    if (maze.bitmap[pac.getposI() + 1][pac.getposJ()] != -1)
+                    {
+                        row = 3;
+                        pac.direction = Vector2i(0, 1);
+                    }
                     break;
                 default:
                     break;
                 }
             }
         }
-
         pac.movePacman(maze.bitmap);
+
         pac.eatPellet(maze.bitmap, maze.mazeSprites);
         //if (collide(pac, ghostsArr) == 1) {
         //    pac.eat(ghost);
