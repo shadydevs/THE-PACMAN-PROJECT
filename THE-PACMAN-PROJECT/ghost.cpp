@@ -14,7 +14,21 @@ private:
 	Texture blinkyT, inkyT, clydeT, forthT;
 public:
 	Sprite ghosts[4] = { blinky, inky, clyde, forth };
-	ghost() {};
+	Vector2i direction[4];
+	int posIs[4];
+	int posJs[4];
+	ghost() 
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			direction[i] = Vector2i(0, 0);
+		}
+		posIs[0] = 7; posJs[0] = 9;
+		posIs[1] = 9; posJs[1] = 10;
+		posIs[2] = 9; posJs[2] = 9;
+		posIs[3] = 9; posJs[3] = 8;
+
+	};
 	void setposI(int x) { posI = x; }
 	void setposy(int y) { posJ = y; }
 	//  int getposx() { posI; }
@@ -39,13 +53,45 @@ public:
 		ghosts[2].setTexture(clydeT);
 		ghosts[3].setTexture(forthT);
 
-
-		ghosts[0].setPosition(9 * 37.5 + (18.75f - 7.5f), 8 * 37.5 + (18.75f - 7.5) + (37.5f * 2.0f));
-		ghosts[1].setPosition(10 * 37.5 + (18.75f - 7.5f), 9 * 37.5 + (18.75f - 7.5) + (37.5f * 2.0f));
-		ghosts[2].setPosition(9 * 37.5 + (18.75f - 7.5f), 9 * 37.5 + (18.75f - 7.5) + (37.5f * 2.0f));
-		ghosts[3].setPosition(8 * 37.5 + (18.75f - 7.5f), 9 * 37.5 + (18.75f - 7.5) + (37.5f * 2.0f));
-
+		for (int i = 0; i < 4; i++)
+		{
+			ghosts[i].setPosition(posJs[i] * 37.5 + (18.75f - 7.5f), posIs[i] * 37.5 + (18.75f - 7.5) + (37.5f * 2.0f));
+		}
 	}
+
+	void moveGhost(int bitmap[21][19]) {
+		for (int i = 0; i < 4; i++)
+		{
+			if (bitmap[posIs[i] + direction[i].y][posJs[i] + direction[i].x] != -1)
+			{
+				ghosts[i].move(37.5 * direction[i].x, 37.5 * direction[i].y);
+				posIs[i] = posIs[i] + direction[i].y;
+				posJs[i] = posJs[i] + direction[i].x;
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	//void moverand(ghost ghost, int bitmap[21][19])
 	////        {
 	//          while(  bitmap[posI][posJ - 1]==-1|| bitmap[posI-1][posJ])

@@ -2,7 +2,6 @@
 
 Character::Character()
 {
-	direction = Vector2i(0, 0);
 }
 int Character::getposI()
 {

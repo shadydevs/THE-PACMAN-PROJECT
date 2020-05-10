@@ -43,7 +43,7 @@ using namespace std;
 int main()
 {
     RenderWindow window(VideoMode(712.5, 950), "PACMAN", Style::Close);
-    window.setFramerateLimit(10);
+    window.setFramerateLimit(2);
 
 	Pacman pac;
     //Texture pacT;
@@ -132,6 +132,8 @@ int main()
             }
         }
         pac.movePacman(maze.bitmap);
+        ghostobj.moveGhost(maze.bitmap);
+        //ghostobj.direction[0] = Vector2i(-1, 0);
 
         pac.eatPellet(maze.bitmap, maze.mazeSprites);
         //if (collide(pac, ghostsArr) == 1) {
@@ -156,16 +158,16 @@ int main()
         //pac.pacman.setTextureRect(animation.uvRect);
 
         window.clear();
-        for (int i = 0; i < 4; i++)
-        {
-            window.draw(ghostobj.ghosts[i]);
-        }
         for (int i = 0; i < sizey; i++)
         {
             for (int j = 0; j < sizex; j++)
             {
                 window.draw(maze.mazeSprites[i][j]);
             }
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            window.draw(ghostobj.ghosts[i]);
         }
         window.draw(pac.pacman);
         window.display();

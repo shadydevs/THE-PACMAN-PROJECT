@@ -8,6 +8,7 @@ Pacman::Pacman()
 	posJ = 9; 
 	pacman.setSize(Vector2f(25, 26.25));
 	pacman.setPosition(posJ * 37.5f + 7, posI * 37.5f + 7 + (37.5f * 2.0f));
+	direction = Vector2i(0, 0);
 	score = 0;
 	eatenPellets = 0;
 	lives = 3;
@@ -82,11 +83,11 @@ void Pacman::movePacman(int bitmap[21][19])
 	//}
 	
 	//usage of (this.) as function parameter has same name
-	if (bitmap[posI + this->direction.y][posJ + this->direction.x] != -1)
+	if (bitmap[posI + direction.y][posJ + direction.x] != -1)
 	{
-		pacman.move(37.5 * this->direction.x, 37.5 * this->direction.y);
-		posI = posI + this->direction.y;
-		posJ = posJ + this->direction.x;
+		pacman.move(37.5 * direction.x, 37.5 * direction.y);
+		posI = posI + direction.y;
+		posJ = posJ + direction.x;
 	}
 }
 //void Pacman::eat(ghost g[])

@@ -1,3 +1,7 @@
 ﻿  main.cpp
-C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\THE-PACMAN-PROJECT\main.cpp(45,35): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
-  THE-PACMAN-PROJECT.vcxproj -> C:\Users\Amy\Desktop\UNI\Spring 20\CS 2\Project\Project code\Debug\THE-PACMAN-PROJECT.exe
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(58,94): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(58,42): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(67,48): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(67,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\main.cpp(45,35): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+  THE-PACMAN-PROJECT.vcxproj -> C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\Debug\THE-PACMAN-PROJECT.exe

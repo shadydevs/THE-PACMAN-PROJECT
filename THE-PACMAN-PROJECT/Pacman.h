@@ -12,7 +12,8 @@ class Pacman : public Character
 private:
 	int score, lives;
 public:
-	RectangleShape pacman;
+	Vector2i direction;			//direction of movement
+	RectangleShape pacman;		//shape used for pacman
 
 	Pacman();
 	int eatenGhosts, eatenPellets;
