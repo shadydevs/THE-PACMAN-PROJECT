@@ -2,20 +2,21 @@
 
 Pacman::Pacman()
 {
-	//t.loadFromFile("data/pacman.png");
-	//pacman.setTexture(t);
+	t.loadFromFile("data/pacman-left.png");
+	pacman.setTexture(&t);
 	posI = 15; //This is the initial position of pacman
 	posJ = 9; 
+	pacman.setSize(Vector2f(25, 26.25));
 	pacman.setPosition(posJ * 37.5f + 7, posI * 37.5f + 7 + (37.5f * 2.0f));
 	score = 0;
 	eatenPellets = 0;
 	lives = 3;
 }
 
-Sprite Pacman::getPacmanSprite()
-{
-	return pacman;
-}
+//RectangleShape Pacman::getPacmanShape()
+//{
+//	return pacman;
+//}
 int Pacman::getScore()
 {
 	return score;
@@ -35,48 +36,58 @@ void Pacman::updateLives()
 	{
 		cout << "You lost!";
 		pacman.setPosition(0, 0);
-		pacman.setColor(Color::Black);
+		pacman.setFillColor(Color::Black);
 	}
 }
+
 //void Pacman::checkPellets()
 //{
 //	if (eatenPellets == 150)
 //		//you won!
 //}
-void Pacman::movePacman(char direction, int bitmap[][19])
+void Pacman::movePacman(int bitmap[21][19])
 {
-	switch (direction)
+	//switch (direction)
+	//{
+	//case 'L':
+	//	//if (bitmap[posI][posJ - 1] != -1)
+	//	//{
+	//		this->direction = Vector2i(-1, 0);		
+	//		//posJ--;
+	//	//}
+	//	break;
+	//case 'R':
+	//	//if (bitmap[posI][posJ + 1] != -1)
+	//	//{
+	//		this->direction = Vector2i(1, 0);
+	//		//posJ++;
+	//	//}
+	//	break;
+	//case 'U':
+	//	//if (bitmap[posI - 1][posJ] != -1)
+	//	//{
+	//		this->direction = Vector2i(0, -1);
+	//		//posI--;
+	//	//}
+	//	break;
+	//case 'D':
+	//	//if (bitmap[posI + 1][posJ] != -1)
+	//	//{
+	//		this->direction = Vector2i(0, 1);
+	//		//posI++;
+	//	//}
+	//	break;
+	//default:
+	//	break;
+	//}
+	
+	//usage of (this.) as function parameter has same name
+	if (bitmap[posI + this->direction.y][posJ + this->direction.x] != -1)
 	{
-	case 'L':
-		if (bitmap[posI][posJ-1] != -1)
-		{
-			pacman.move(-37.5, 0);
-			posJ--;
-		}
-		break;
-	case 'R':
-		if (bitmap[posI][posJ +1] != -1)
-		{
-			pacman.move(37.5, 0);
-			posJ++;
-		}
-		break;
-	case 'U':
-		if (bitmap[posI -1][posJ] != -1)
-		{
-			pacman.move(0, -37.5);
-			posI--;
-		}
-		break;
-	case 'D':
-		if (bitmap[posI +1][posJ] != -1)
-		{
-			pacman.move(0, 37.5);
-			posI++;
-		}
-		break;
-	default:
-		break;
+		pacman.move(37.5 * this->direction.x, 37.5 * this->direction.y);
+		posI = posI + this->direction.y;
+		posJ = posJ + this->direction.x;
+		cout << getposI() << endl << getposJ() << endl;
 	}
 }
 //void Pacman::eat(ghost g[])

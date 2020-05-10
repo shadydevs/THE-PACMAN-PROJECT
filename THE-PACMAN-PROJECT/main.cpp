@@ -43,20 +43,22 @@ using namespace std;
 int main()
 {
     RenderWindow window(VideoMode(712.5, 950), "PACMAN", Style::Close);
-    window.setFramerateLimit(60);
+    window.setFramerateLimit(10);
 
 	Pacman pac;
-    Texture pacT;
-    pacT.loadFromFile("data/pacman.png");
-    Animation animation(&pacT, Vector2u(3, 4), 0.3f);
+    //Texture pacT;
+    //pacT.loadFromFile("data/pacman.png");
+    //Animation animation(&pacT, Vector2u(3, 4), 0.3f);
+   
     int row = 0;
     float deltaTime = 0.0f;
     Clock clock;
 	
+    //pac.pacman.setTextureRect(animation.uvRect);
 	
     ghost ghostobj;
     ghostobj.setghosts();
-	
+    
     //Player player;
     ofstream playersInfo;
 
@@ -77,37 +79,50 @@ int main()
         {
             if (evnt.type == Event::Closed)
                 window.close();
-			if (evnt.type == Event::KeyPressed)
-			{
-				switch (evnt.key.code)
-			{
-				case Keyboard::Escape:
-					window.close();
-					break;
-				
-				case Keyboard::Left:
-					pac.movePacman('L', maze.bitmap);
-                    row = 0;
-					break;
-				case Keyboard::Right:
-					pac.movePacman('R', maze.bitmap);
-                    row = 1;
-					break;
-				case Keyboard::Up:
-                    row = 2;
-					pac.movePacman('U', maze.bitmap);
-					break;
-				case Keyboard::Down:
-                    row = 3;
-					pac.movePacman('D', maze.bitmap);
-					break;
-				default:
-					break;
-				}
-			}
+            if (evnt.type == Event::KeyPressed)
+            {
+                switch (evnt.key.code)
+                {
+                case Keyboard::Escape:
+                    window.close();
+                    break;
 
+                case Keyboard::Left:
+                    if (maze.bitmap[pac.getposI()][pac.getposJ() - 1] != -1)
+                    {
+                        row = 0;
+                        pac.direction = Vector2i(-1, 0);
+                    }
+                    break;
+                case Keyboard::Right:
+                    if (maze.bitmap[pac.getposI()][pac.getposJ() + 1] != -1)
+                    {
+                        row = 1;
+                        pac.direction = Vector2i(1, 0);
+                    }
+                    break;
+                case Keyboard::Up:
+                    if (maze.bitmap[pac.getposI() - 1][pac.getposJ()] != -1)
+                    {
+                        row = 2;
+                        pac.direction = Vector2i(0, -1);
+                    }
+                    break;
+                case Keyboard::Down:
+                    if (maze.bitmap[pac.getposI() + 1][pac.getposJ()] != -1)
+                    {
+                        row = 3;
+                        pac.direction = Vector2i(0, 1);
+                    }
+                    break;
+                default:
+                    break;
+                }
+            }
         }
-		pac.eatPellet(maze.bitmap, maze.mazeSprites);
+        pac.movePacman(maze.bitmap);
+
+        pac.eatPellet(maze.bitmap, maze.mazeSprites);
         //if (collide(pac, ghostsArr) == 1) {
         //    pac.eat(ghost);
         //}
@@ -124,10 +139,11 @@ int main()
                 ask if want to replay
             }
             */
-        //}
+            //}
 
-        animation.Update(row, deltaTime);
-      /*  pac.pacman.setTextureRect(animation.uvRect);*/
+        //animation.Update(row, deltaTime);
+        //pac.pacman.setTextureRect(animation.uvRect);
+
         window.clear();
         for (int i = 0; i < 4; i++)
         {
@@ -140,7 +156,7 @@ int main()
                 window.draw(maze.mazeSprites[i][j]);
             }
         }
-		window.draw(pac.pacman);
+        window.draw(pac.pacman);
         window.display();
     }
 

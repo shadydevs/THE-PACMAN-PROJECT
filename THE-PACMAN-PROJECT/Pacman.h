@@ -11,8 +11,8 @@ class Pacman : public Character
 {
 private:
 	int score, lives;
-	Sprite pacman;
 public:
+	RectangleShape pacman;
 
 	Pacman();
 	int eatenGhosts, eatenPellets;
@@ -23,8 +23,8 @@ public:
 	void eatPellet(int bitmap[][19], Sprite mazeSprites[][19]);
 	void updateLives();
 
-	Sprite getPacmanSprite();
-	void movePacman(char direction, int bitmap[21][19]);
+	//RectangleShape getPacmanShape();
+	void movePacman(int bitmap[21][19]);
 	//void eat(ghost g);
 	//void eat(pellet pell);
 };
