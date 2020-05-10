@@ -1,49 +1,15 @@
 #include <SFML/Graphics.hpp>
-//#include <Clock.hpp>
 #include <iostream>
 #include <fstream>
 #include "Maze.h"
 #include "Pacman.h"
-#include "Animation.h"
-#include "Character.h"
-#include "ghost.cpp"
 using namespace sf;
 using namespace std;
-
-
-//int collide(Pacman pac, ghost ghostsArr[]) {
-//    for (int i = 0; i < 4; i++)
-//    {
-//        if (intersects(pac.getGlobalBounds(), ghostsArr[i].getGlobalBounds)) {
-//            if (pac.superModeOn()) {
-//                return 1;
-//            }
-//            else
-//            {
-//                return 2;
-//            }
-//        }
-//    }
-//
-//    return 0;
-//}
-//
-//int collide(pacman pac, pellet pels[]) {
-//    for (int i = 0; i < 4; i++)
-//    {
-//        if (intersects(pac.getGlobalBounds(), pels[i].getGlobalBounds))
-//        {
-//
-//        }
-//    }
-//
-//    return 0;
-//}
 
 int main()
 {
     RenderWindow window(VideoMode(712.5, 950), "PACMAN", Style::Close);
-    window.setFramerateLimit(10);
+    window.setFramerateLimit(7);
 
 	Pacman pac;
     //Texture pacT;
@@ -53,12 +19,6 @@ int main()
     int row = 0;
     float deltaTime = 0.0f;
     Clock clock;
-	/*Texture pacR;
-	pacR.loadFromFile("data/pacman-right");
-	Texture pacU;
-	pacU.loadFromFile("data/pacman-up");
-	Texture pacD;
-	pacD.loadFromFile("data/pacman-down");*/
 
     //pac.pacman.setTextureRect(animation.uvRect);
 	
@@ -71,9 +31,12 @@ int main()
     //cout << "enter player name: ";
     //cin >> player.name;
 
-    Maze maze("data/maze2.txt", "data/tile.png", "data/pellet.png", pac);
+    Maze maze("data/maze2.txt", "data/tile.png", "data/pellet.png");
+    
+    //int graph[V][V];
 
-    //pac.setPosition();
+    //dijkstra(graph, 0);
+
 
 
     while (window.isOpen())
@@ -97,7 +60,8 @@ int main()
                     if (maze.bitmap[pac.getposI()][pac.getposJ() - 1] != -1)
                     {
                         row = 0;
-						/*pac.pacman.setTexture(&pac.getT());*/
+                        pac.pacman.setRotation(0.0f);
+						pac.pacman.setTexture(&pac.tL);
                         pac.direction = Vector2i(-1, 0);
                     }
                     break;
@@ -105,8 +69,7 @@ int main()
                     if (maze.bitmap[pac.getposI()][pac.getposJ() + 1] != -1)
                     {
                         row = 1;
-
-						/*pac.pacman.setTexture(&pacR);*/
+						pac.pacman.setTexture(&pac.tR);
                         pac.direction = Vector2i(1, 0);
                     }
                     break;
@@ -114,7 +77,7 @@ int main()
                     if (maze.bitmap[pac.getposI() - 1][pac.getposJ()] != -1)
                     {
                         row = 2;
-						/*pac.pacman.setTexture(&pacU);*/
+						pac.pacman.setTexture(&pac.tU);
                         pac.direction = Vector2i(0, -1);
                     }
                     break;
@@ -122,7 +85,7 @@ int main()
                     if (maze.bitmap[pac.getposI() + 1][pac.getposJ()] != -1)
                     {
                         row = 3;
-						/*pac.pacman.setTexture(&pacD);*/
+						pac.pacman.setTexture(&pac.tD);
                         pac.direction = Vector2i(0, 1);
                     }
                     break;
@@ -132,8 +95,35 @@ int main()
             }
         }
         pac.movePacman(maze.bitmap);
+        ghostobj.moveGhost(maze.bitmap);
+
+        srand(time(0));
+        int nextDir = rand() % 4;
+
+        if (nextDir == 0)
+            ghostobj.direction[0] = Vector2i(-1, 0);
+        else if (nextDir == 1)
+            ghostobj.direction[0] = Vector2i(1, 0);
+        else if (nextDir == 2)
+            ghostobj.direction[0] = Vector2i(0, 1);
+        else if (nextDir == 3)
+            ghostobj.direction[0] = Vector2i(0, -1);
 
         pac.eatPellet(maze.bitmap, maze.mazeSprites);
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (ghostobj.posIs[i] == pac.getposI() && ghostobj.posJs[i] == pac.getposJ()) {
+
+            }
+        }
+
+
+        //ghostobj.getOut(pac.getScore());
+        //cout << pac.getScore() << endl;
+        //for (int i = 0; i < 4; i++)
+        //    ghostobj.direction[i] = Vector2i(1, 0);
+
         //if (collide(pac, ghostsArr) == 1) {
         //    pac.eat(ghost);
         //}
@@ -156,16 +146,16 @@ int main()
         //pac.pacman.setTextureRect(animation.uvRect);
 
         window.clear();
-        for (int i = 0; i < 4; i++)
-        {
-            window.draw(ghostobj.ghosts[i]);
-        }
         for (int i = 0; i < sizey; i++)
         {
             for (int j = 0; j < sizex; j++)
             {
                 window.draw(maze.mazeSprites[i][j]);
             }
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            window.draw(ghostobj.ghosts[i]);
         }
         window.draw(pac.pacman);
         window.display();

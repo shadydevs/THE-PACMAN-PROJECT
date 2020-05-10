@@ -1,10 +1,6 @@
-#pragma once
 #include "SFML/Graphics.hpp"
-#include "Pacman.h"
-#include<iostream>
-#include<fstream>
-#include<string>
-
+#include <fstream>
+#include <string>
 using namespace std;
 using namespace sf;
 
@@ -17,10 +13,9 @@ private:
 	Texture pelletT;
 	Texture tileT;
 public:
-	Pacman &pac;
 	int bitmap[sizey][sizex];
 
-	Maze(string, string, string, Pacman& _pac);
+	Maze(string, string, string);
 	Sprite mazeSprites[sizey][sizex];
 };
 

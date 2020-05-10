@@ -1,30 +1,40 @@
-#pragma once
 #include <iostream>
-#include <fstream>
-#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
-#include "Character.h"
+#include "ghost.h"
 using namespace sf;
 using namespace std;
 
-class Pacman : public Character
+class Pacman
 {
 private:
 	int score, lives;
+	int posI, posJ;
 public:
-	RectangleShape pacman;
+	Texture tL;
+	Texture tR;
+	Texture tU;
+	Texture tD;
+
+	Vector2i direction;			//direction of movement
+	RectangleShape pacman;		//shape used for pacman
+
+	int eatenGhosts, eatenPellets;
+	bool superModeOn;
 
 	Pacman();
-	int eatenGhosts, eatenPellets;
 	
+	int getposI();
+	void setposI(int i);
+	int getposJ();
+	void setposJ(int j);
+
 	int getScore();
 	void updateScore();
 	int getLives();
 	void eatPellet(int bitmap[][19], Sprite mazeSprites[][19]);
 	void updateLives();
-
 	//RectangleShape getPacmanShape();
 	void movePacman(int bitmap[21][19]);
-	//void eat(ghost g);
+	void eat(ghost g);
 	//void eat(pellet pell);
 };
