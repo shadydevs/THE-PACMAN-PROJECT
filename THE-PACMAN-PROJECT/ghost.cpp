@@ -91,7 +91,7 @@ void do_bfs()
 	basicPoint initialpost = basic(ghost[i].posI, ghost[i].posJ)     //orginal position of ghost
 		for (int i = 0; i < 4; i++)
 		{
-			if (grid[ghost.posI + dx[i]][ghost[i].getposJ + dy[i]] != -1))
+			if (grid[ghost.posI + dx[i]][ghost[i].getposJ + dy[i]] != -1));
 
 		{
 		if (grid[ghost[i].posI + dx[i]][ghost[i].getposJ + dy[i]] < v)
