@@ -29,7 +29,7 @@ Maze::Maze(string _BMF, string _TF, string _PF) {		//BMF bitmapfile, TF texture 
 				}
 				if (bitmap[i][j] == 2)
 				{
-					mazeSprites[i][j].scale(1.25f, 1.25f);
+					mazeSprites[i][j].scale(1.35f, 1.35f);
 					mazeSprites[i][j].setColor(Color::Red);
 				}
 
