@@ -1,4 +1,69 @@
-﻿  Maze.cpp
-C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\Maze.cpp(27,90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\Maze.cpp(27,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  THE-PACMAN-PROJECT.vcxproj -> C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\Debug\THE-PACMAN-PROJECT.exe
+﻿  ghost.cpp
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(8,22): error C2065: 'n': undeclared identifier
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(10,23): error C2065: 'n': undeclared identifier
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(22,22): error C2065: 'n': undeclared identifier
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(24,23): error C2065: 'n': undeclared identifier
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(61,2): error C3861: 'matrix': identifier not found
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(66,36): error C2065: 'initialPacmanX': undeclared identifier
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(66,52): error C2065: 'initialPacmanY': undeclared identifier
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(66,23): error C2512: 'basicPoint': no appropriate default constructor available
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(32,8): message : see declaration of 'basicPoint'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(76,22): error C2065: 'grid': undeclared identifier
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(80,8): error C2065: 'grid': undeclared identifier
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(86,5): error C2065: 'grid': undeclared identifier
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(90,14): error C2062: type 'int' unexpected
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(91,39): error C2065: 'i': undeclared identifier
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(91,33): error C2275: 'ghost': illegal use of this type as an expression
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.h(7): message : see declaration of 'ghost'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(91,54): error C2065: 'i': undeclared identifier
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(91,48): error C2275: 'ghost': illegal use of this type as an expression
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.h(7): message : see declaration of 'ghost'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(91,27): error C3861: 'basic': identifier not found
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(92,3): error C2143: syntax error: missing ';' before 'for'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(94,8): error C2065: 'grid': undeclared identifier
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(94,13): error C2275: 'ghost': illegal use of this type as an expression
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.h(7): message : see declaration of 'ghost'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(94,33): error C2275: 'ghost': illegal use of this type as an expression
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.h(7): message : see declaration of 'ghost'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(94,65): error C2059: syntax error: ')'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(97,7): error C2065: 'grid': undeclared identifier
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(97,12): error C2275: 'ghost': illegal use of this type as an expression
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.h(7): message : see declaration of 'ghost'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(97,35): error C2275: 'ghost': illegal use of this type as an expression
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.h(7): message : see declaration of 'ghost'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(99,8): error C2065: 'grid': undeclared identifier
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(99,13): error C2275: 'ghost': illegal use of this type as an expression
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.h(7): message : see declaration of 'ghost'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(99,33): error C2275: 'ghost': illegal use of this type as an expression
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.h(7): message : see declaration of 'ghost'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(100,20): error C2275: 'ghost': illegal use of this type as an expression
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.h(7): message : see declaration of 'ghost'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(101,20): error C2275: 'ghost': illegal use of this type as an expression
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.h(7): message : see declaration of 'ghost'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(141,4): error C2059: syntax error: '}'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(141,4): error C2143: syntax error: missing ';' before '}'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(142,3): error C2143: syntax error: missing ';' before '}'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(142,3): error C2059: syntax error: '}'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(145,3): error C2143: syntax error: missing ';' before '{'
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(145,3): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(179,95): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(179,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(188,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\ghost.cpp(188,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  main.cpp
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\main.cpp(11,35): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\main.cpp(100,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Pacman.cpp
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\Pacman.cpp(83,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\Pacman.cpp(83,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\Pacman.cpp(95,108): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\EGYPT_LAPTOP\source\repos\shadydevs\THE-PACMAN-PROJECT\THE-PACMAN-PROJECT\Pacman.cpp(95,54): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Generating Code...

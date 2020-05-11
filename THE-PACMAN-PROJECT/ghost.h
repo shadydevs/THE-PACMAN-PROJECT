@@ -1,7 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include <queue>
 #include <fstream>
+#include <iostream>
 using namespace sf;
+using namespace std;
 class ghost
 {
 private:

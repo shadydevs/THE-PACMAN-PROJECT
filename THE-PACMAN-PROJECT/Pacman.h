@@ -1,8 +1,5 @@
-#include <iostream>
 #include <SFML/Graphics.hpp>
 #include "ghost.h"
-using namespace sf;
-using namespace std;
 
 class Pacman
 {
