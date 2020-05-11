@@ -138,8 +138,8 @@ void do_bfs()
 ////					visited[node] = true;
 ////					q.push(node);
 ////				}
-			}
-		}
+			//}
+		//}
 
 		ghost::ghost()
 		{
