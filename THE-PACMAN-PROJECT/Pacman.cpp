@@ -18,10 +18,6 @@ Pacman::Pacman()
 	superModeOn = false;
 }
 
-//RectangleShape Pacman::getPacmanShape()
-//{
-//	return pacman;
-//}
 int Pacman::getScore()
 {
 	return score;
@@ -45,11 +41,6 @@ void Pacman::updateLives()
 	}
 }
 
-//void Pacman::checkPellets()
-//{
-//	if (eatenPellets == 150)
-//		//you won!
-//}
 void Pacman::movePacman(int bitmap[21][19])
 {
 	//switch (direction)

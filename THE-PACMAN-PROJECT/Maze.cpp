@@ -27,6 +27,10 @@ Maze::Maze(string _BMF, string _TF, string _PF) {		//BMF bitmapfile, TF texture 
 					mazeSprites[i][j].setPosition(j * 37.5 + (18.75f - 7.5f), i * 37.5 + (18.75f - 7.5) + (37.5f * 2.0f));
 					//						(size of tile)|(offset of half tile then adjusting half a pellet to center it)|(vertical offset from top of window by two tiles)
 				}
+				if (bitmap[i][j] == 2)
+				{
+					mazeSprites[i][j].setColor(Color::Red);
+				}
 
 			}
 		}
