@@ -49,6 +49,18 @@ void Pacman::movePacman(int bitmap[21][19])
 		posI = posI + direction.y;
 		posJ = posJ + direction.x;
 	}
+	if (posI == 9 && posJ == 0)
+	{
+		posI = 9;
+		posJ = 18;
+		pacman.setPosition(posJ * 37.5f + 7, posI * 37.5f + 7 + (37.5f * 2.0f));
+	}
+	else if (posI == 9 && posJ == 18)
+	{
+		posI = 9;
+		posJ = 0;
+		pacman.setPosition(posJ * 37.5f + 7, posI * 37.5f + 7 + (37.5f * 2.0f));
+	}
 }
 
 void Pacman::eat(ghost& g, int i)

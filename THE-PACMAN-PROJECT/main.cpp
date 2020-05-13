@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
     RenderWindow window(VideoMode(712.5, 950), "PACMAN", Style::Close);
-    window.setFramerateLimit(7);
+    window.setFramerateLimit(8);
 
 	Pacman pac;
     //Texture pacT;
@@ -89,6 +89,8 @@ int main()
                         pac.direction = Vector2i(0, 1);
                     }
                     break;
+                case Keyboard::Enter:
+                    cout << pac.getposI() << " " << pac.getposJ() << endl;
                 default:
                     break;
                 }
