@@ -2,6 +2,8 @@
 #include <queue>
 #include <fstream>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace sf;
 using namespace std;
 class ghost
@@ -10,10 +12,9 @@ private:
 	Sprite blinky, pinky, inky, clyde;
 	Texture blinkyT, pinkyT, inkyT, clydeT;
 
-	int getOutScore[4];			//the score pac reaches when each ghost gets out of home
 
 public:
-
+	int getOutScore[4];			//the score pac reaches when each ghost gets out of home
 	int AdjList[21][19];
 	int grid[21][19];
 	void matrix();
@@ -31,3 +32,5 @@ public:
 	//void BFS(int src);
 	//void Graph(const int& p_Vertices);
 };
+
+void do_bfs(ghost* gh, int, int);

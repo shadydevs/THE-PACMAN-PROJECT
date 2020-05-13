@@ -1,32 +1,30 @@
 #include "ghost.h"
+#define MAX 99999
 
 void ghost::matrix()
 {
-	int Adjlist[21][19];
+	//int Adjlist[21][19];
 	ifstream in_file;
-	in_file.open("graph");
-	for (int i = 0; i < n; ++i)
+	in_file.open("graph.txt");
+	for (int i = 0; i < 21; i++)
 	{
-		for (int j = 0; j < n; ++j)
+		for (int j = 0; j < 19; j++)
 		{
-			in_file >> Adjlist[i][j];
-			if (grid[i][j] == -1)
-
+			in_file >> AdjList[i][j];
+			if (AdjList[i][j] == -1)
 				grid[i][j] = -1;
-
 			else
 				grid[i][j] = 0;
 		}
 	}
 	in_file.close();
-	for (int i = 0; i < n; ++i)
-	{
-		for (int j = 0; j < n; ++j)
-		{
-			cout << Adjlist[i][j];
-		}
-	}
-
+	//for (int i = 0; i < 21; ++i)
+	//{
+	//	for (int j = 0; j < 19; ++j)
+	//	{
+	//		cout << grid[i][j];
+	//	}
+	//
 }
 //Basic point struct
 struct basicPoint
@@ -52,13 +50,13 @@ struct basicPoint
 int dx[] = { 0, 1, 0, -1 };
 int dy[] = { 1, 0, -1, 0 };
 
-void do_bfs()
+void do_bfs(ghost* gh, int initialPacmanX, int initialPacmanY)
 {
 	//Initialise queue and obtain the actual play grid
 	std::queue<basicPoint> queue;
 	/*int playGrid[][] = functionToGetGrid();*/
 
-	matrix();
+	//matrix();
 	// initialize grid with values corresponding to walls or INT.MAX_VALUE
 	/*int grid[][];*/
 
@@ -73,39 +71,36 @@ void do_bfs()
 		queue.pop();
 		int cur_x = cur_place.x;
 		int cur_y = cur_place.y;
-		int cur_distance = grid[cur_x][cur_y];
+		int cur_distance = gh->grid[cur_x][cur_y];
 
 		for (int i = 0; i < 4; i++)
 		{
-			if (grid[cur_x + dx[i]][cur_y + dy[i]] != -1)
-
-				//if (cur_x + dx[i] >= 0 &&/* grid[i][j]1!=-1*/)//define 2arrau
+			if (gh->grid[cur_x + dx[i]][cur_y + dy[i]] != MAX)
+				//if (cur_x + dx[i] >= 0 && gh->grid[i][j]!=-1)//define 2arrau
 			{
 				basicPoint currentPoint = basicPoint(cur_x + dx[i], cur_y + dy[i]);
 				queue.push(currentPoint);
-				grid[cur_x + dx[i]][cur_y + dy[i]] = cur_distance + 1;
+				gh->grid[cur_x + dx[i]][cur_y + dy[i]] = cur_distance + 1;
 			}
 		}
 	}
-	int v = int MAX;
-	basicPoint initialpost = basic(ghost[i].posI, ghost[i].posJ)     //orginal position of ghost
-		for (int i = 0; i < 4; i++)
+	int v = MAX;
+	basicPoint initialpost = basicPoint(gh->posIs[0], gh->posJs[0]);    //orginal position of ghost
+	for (int i = 0; i < 4; i++)
+	{
+		if (gh->grid[gh->posIs[0] + dx[i]][gh->posJs[0] + dy[i]] != -1);
 		{
-			if (grid[ghost.posI + dx[i]][ghost[i].getposJ + dy[i]] != -1));
-
-		{
-		if (grid[ghost[i].posI + dx[i]][ghost[i].getposJ + dy[i]] < v)
-		{
-			v = grid[ghost.posI + dx[i]][ghost[i].getposJ + dy[i]];
-			initialpost.x = ghost[i].posI + dx[i];
-			initialpost.y = ghost[i].getposJ + dy[i];
-
+			if (gh->grid[gh->posIs[0] + dx[i]][gh->posJs[0] + dy[i]] < v)
+			{
+				v = gh->grid[gh->posIs[0] + dx[i]][gh->posJs[0] + dy[i]];
+				initialpost.x = gh->posIs[0] + dx[i];
+				initialpost.y = gh->posJs[0] + dy[i];
+			}
+			//call moveghost
+			gh->ghosts[0].move(37.5 * dx[i], 37.5 * dy[i]);
 		}
-		//call moveghost
+		// now grid is filled, so now you should find out for each ghost how to move
 	}
-			// now grid is filled, so now you should find out for each ghost how to move
-		}
-
 }
 ////void ghost::BFS(int srcx,int srcy)
 ////{
@@ -148,8 +143,7 @@ ghost::ghost()
 	posIs[2] = 9; posJs[2] = 9;
 	posIs[3] = 9; posJs[3] = 8;
 
-	direction[0] = Vector2i(-1, 0);
-	for (int i = 1; i < 4; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		direction[i] = Vector2i(0, 0);
 		startPosition[i] = Vector2f(posJs[i] * 37.5 + (18.75f - 7.5f), posIs[i] * 37.5 + (18.75f - 7.5) + (37.5f * 2.0f));

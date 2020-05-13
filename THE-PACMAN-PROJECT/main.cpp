@@ -36,9 +36,9 @@ int main()
     //int graph[V][V];
 
     //dijkstra(graph, 0);
-
-
-
+    ghostobj.matrix();
+    int randIteration = rand();
+    int ghostTurn;
     while (window.isOpen())
     {
         deltaTime = clock.restart().asSeconds();
@@ -95,20 +95,31 @@ int main()
             }
         }
         pac.movePacman(maze.bitmap);
+        //do_bfs(&ghostobj, pac.getposI(), pac.getposJ());      //triggers infinite loop
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (pac.getScore() >= ghostobj.getOutScore[i])
+                ghostTurn = i;
+        }
+
+        //ghosts random movement
+        for (int i = 0; i <= ghostTurn; i++)
+        {
+            srand(randIteration);
+            randIteration += rand();
+            int nextDir = rand() % 4;
+            if (nextDir == 0)
+                ghostobj.direction[i] = Vector2i(-1, 0);
+            else if (nextDir == 1)
+                ghostobj.direction[i] = Vector2i(1, 0);
+            else if (nextDir == 2)
+                ghostobj.direction[i] = Vector2i(0, 1);
+            else if (nextDir == 3)
+                ghostobj.direction[i] = Vector2i(0, -1);
+        }
+
         ghostobj.moveGhost(maze.bitmap);
-
-        srand(time(0));
-        int nextDir = rand() % 4;
-
-        if (nextDir == 0)
-            ghostobj.direction[0] = Vector2i(-1, 0);
-        else if (nextDir == 1)
-            ghostobj.direction[0] = Vector2i(1, 0);
-        else if (nextDir == 2)
-            ghostobj.direction[0] = Vector2i(0, 1);
-        else if (nextDir == 3)
-            ghostobj.direction[0] = Vector2i(0, -1);
-
         pac.eatPellet(maze.bitmap, maze.mazeSprites);
 
         for (int i = 0; i < 4; i++)
@@ -122,15 +133,6 @@ int main()
 
         //ghostobj.getOut(pac.getScore());
         //cout << pac.getScore() << endl;
-        //for (int i = 0; i < 4; i++)
-        //    ghostobj.direction[i] = Vector2i(1, 0);
-
-        //if (collide(pac, ghostsArr) == 1) {
-        //    pac.eat(ghost);
-        //}
-        //else if (collide(pac, ghostsArr) == 2) {
-        //    ghost.eat(pac);
-        //}
 
         //if (pac.isDead()) {
             /*

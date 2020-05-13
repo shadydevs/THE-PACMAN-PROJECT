@@ -43,41 +43,6 @@ void Pacman::updateLives()
 
 void Pacman::movePacman(int bitmap[21][19])
 {
-	//switch (direction)
-	//{
-	//case 'L':
-	//	//if (bitmap[posI][posJ - 1] != -1)
-	//	//{
-	//		this->direction = Vector2i(-1, 0);		
-	//		//posJ--;
-	//	//}
-	//	break;
-	//case 'R':
-	//	//if (bitmap[posI][posJ + 1] != -1)
-	//	//{
-	//		this->direction = Vector2i(1, 0);
-	//		//posJ++;
-	//	//}
-	//	break;
-	//case 'U':
-	//	//if (bitmap[posI - 1][posJ] != -1)
-	//	//{
-	//		this->direction = Vector2i(0, -1);
-	//		//posI--;
-	//	//}
-	//	break;
-	//case 'D':
-	//	//if (bitmap[posI + 1][posJ] != -1)
-	//	//{
-	//		this->direction = Vector2i(0, 1);
-	//		//posI++;
-	//	//}
-	//	break;
-	//default:
-	//	break;
-	//}
-	
-	//usage of (this.) as function parameter has same name
 	if (bitmap[posI + direction.y][posJ + direction.x] != -1)
 	{
 		pacman.move(37.5 * direction.x, 37.5 * direction.y);
@@ -86,7 +51,6 @@ void Pacman::movePacman(int bitmap[21][19])
 	}
 }
 
-//error
 void Pacman::eat(ghost& g, int i)
 {
 	if (superModeOn)	//if pacman is in fright mode
@@ -109,35 +73,13 @@ void Pacman::eat(ghost& g, int i)
 	}
 }
 
-	//if (collide(this, g) == 1)			//An object of class pacman and an object of class ghost are given as parameters
-	//{
-	//	g.ghosts[i].setPosition(g.startPosition[i]);
-
-	//	//if pacman is in fright mode
-	//	score = score + 200 * eatenGhosts;//200 for first, 400 for second, 800 for third, 1600 for forth
-	//	updateScore();
-	//	eatenGhosts++;
-	//}
-	//else if (collide(this, g) == 2)
-	//{
-	//	lives--;
-	//	updateLives();
-	//	pacman.setPosition(292, 527); // return to initial position
-	//}
-
-//}
-////call updateLives
-////operator overloading in lives--
-//}
-
-
 void Pacman::eatPellet(int bitmap[][19], Sprite mazeSprites[][19])
 {
 	if (bitmap[posI][posJ] == 1)
 	{
 		bitmap[posI][posJ] = 0;
 		eatenPellets++;
-		score = score + 10;
+		score += 10;
 		updateScore();
 		mazeSprites[posI][posJ].setColor(Color::Black);
 		if (eatenPellets == 150)
