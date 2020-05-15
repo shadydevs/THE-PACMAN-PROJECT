@@ -3,6 +3,7 @@
 #include <fstream>
 #include "Maze.h"
 #include "Pacman.h"
+#include "Animation.h"
 using namespace sf;
 using namespace std;
 
@@ -14,13 +15,13 @@ int main()
 	Pacman pac;
     //Texture pacT;
     //pacT.loadFromFile("data/pacman.png");
-    //Animation animation(&pacT, Vector2u(3, 4), 0.3f);
+    Animation animation(&pac.spriteSheet, Vector2u(3, 4), 0.4f);
    
     int row = 0;
     float deltaTime = 0.0f;
     Clock clock;
 
-    //pac.pacman.setTextureRect(animation.uvRect);
+    pac.pacman.setTextureRect(animation.uvRect);
 	
     ghost ghostobj;
     ghostobj.setghosts();
@@ -60,8 +61,8 @@ int main()
                     if (maze.bitmap[pac.getposI()][pac.getposJ() - 1] != -1)
                     {
                         row = 0;
-                        pac.pacman.setRotation(0.0f);
-						pac.pacman.setTexture(&pac.tL);
+                        //pac.pacman.setRotation(0.0f);
+						//pac.pacman.setTexture(&pac.tL);
                         pac.direction = Vector2i(-1, 0);
                     }
                     break;
@@ -69,7 +70,7 @@ int main()
                     if (maze.bitmap[pac.getposI()][pac.getposJ() + 1] != -1)
                     {
                         row = 1;
-						pac.pacman.setTexture(&pac.tR);
+						//pac.pacman.setTexture(&pac.tR);
                         pac.direction = Vector2i(1, 0);
                     }
                     break;
@@ -77,7 +78,7 @@ int main()
                     if (maze.bitmap[pac.getposI() - 1][pac.getposJ()] != -1)
                     {
                         row = 2;
-						pac.pacman.setTexture(&pac.tU);
+						//pac.pacman.setTexture(&pac.tU);
                         pac.direction = Vector2i(0, -1);
                     }
                     break;
@@ -85,7 +86,7 @@ int main()
                     if (maze.bitmap[pac.getposI() + 1][pac.getposJ()] != -1)
                     {
                         row = 3;
-						pac.pacman.setTexture(&pac.tD);
+						//pac.pacman.setTexture(&pac.tD);
                         pac.direction = Vector2i(0, 1);
                     }
                     break;
@@ -147,8 +148,8 @@ int main()
             */
             //}
 
-        //animation.Update(row, deltaTime);
-        //pac.pacman.setTextureRect(animation.uvRect);
+        animation.Update(row, deltaTime);
+        pac.pacman.setTextureRect(animation.uvRect);
 
         window.clear();
         for (int i = 0; i < sizey; i++)

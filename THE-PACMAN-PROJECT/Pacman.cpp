@@ -2,11 +2,12 @@
 
 Pacman::Pacman()
 {
+	spriteSheet.loadFromFile("data/pacman.png");
 	tL.loadFromFile("data/bagPac/pacman-left.png");				//initial position texture
 	tR.loadFromFile("data/bagPac/pacman-right.png");
 	tU.loadFromFile("data/bagPac/pacman-up.png");
 	tD.loadFromFile("data/bagPac/pacman-down.png");
-	pacman.setTexture(&tL);
+	pacman.setTexture(&spriteSheet);
 	posI = 15; //This is the initial position of pacman
 	posJ = 9; 
 	pacman.setSize(Vector2f(25, 26.25));

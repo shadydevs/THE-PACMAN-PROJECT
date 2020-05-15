@@ -7,6 +7,7 @@ private:
 	int score, lives;
 	int posI, posJ;
 public:
+	Texture spriteSheet;
 	Texture tL;
 	Texture tR;
 	Texture tU;
