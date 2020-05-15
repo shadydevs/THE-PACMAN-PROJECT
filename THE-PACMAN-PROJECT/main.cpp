@@ -60,7 +60,6 @@ int main()
                     if (maze.bitmap[pac.getposI()][pac.getposJ() - 1] != -1)
                     {
                         row = 0;
-                        pac.pacman.setRotation(0.0f);
 						pac.pacman.setTexture(&pac.tL);
                         pac.direction = Vector2i(-1, 0);
                     }
