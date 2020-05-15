@@ -91,16 +91,19 @@ void Pacman::eatPellet(int bitmap[][19], Sprite mazeSprites[][19])
 	{
 		bitmap[posI][posJ] = 0;
 		eatenPellets++;
+		if (eatenPellets == 150)
+			cout << "You won!";
 		score += 10;
 		updateScore();
 		mazeSprites[posI][posJ].setColor(Color::Black);
-		if (eatenPellets == 150)
-			cout << "You won!";
+		
 	}
 	else if(bitmap[posI][posJ] == 2)
 	{
 		bitmap[posI][posJ] = 0;
 		eatenPellets++;
+		if (eatenPellets == 150)
+			cout << "You won!";
 		score = score + 50;
 		updateScore();
 		superModeOn = true;
