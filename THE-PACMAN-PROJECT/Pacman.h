@@ -8,10 +8,6 @@ private:
 	int posI, posJ;
 public:
 	Texture spriteSheet;
-	Texture tL;
-	Texture tR;
-	Texture tU;
-	Texture tD;
 
 	Vector2i direction;			//direction of movement
 	RectangleShape pacman;		//shape used for pacman

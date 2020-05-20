@@ -13,14 +13,12 @@ int main()
     window.setFramerateLimit(8);
 
 	Pacman pac;
-    //Texture pacT;
-    //pacT.loadFromFile("data/pacman.png");
     Animation animation(&pac.spriteSheet, Vector2u(3, 4), 0.4f);
    
     int row = 0;
     float deltaTime = 0.0f;
     Clock clock;
-
+    
     pac.pacman.setTextureRect(animation.uvRect);
 	
     ghost ghostobj;
@@ -29,8 +27,35 @@ int main()
     //Player player;
     ofstream playersInfo;
 
-    //cout << "enter player name: ";
-    //cin >> player.name;
+    //UI ELEMENTS
+    Font arial;
+    arial.loadFromFile("data/arial.ttf");
+
+    Text remLives;
+    remLives.setFont(arial);
+    remLives.setFillColor(Color::Yellow);
+    remLives.setPosition(0.0f, 23 * 38.0f);
+    remLives.setString("REMAINING LIVES: ");
+
+    Text scoreText;
+    scoreText.setFont(arial);
+    scoreText.setPosition(0.0f, 0.0f);
+    string finalScore;
+    finalScore = "SCORE: " + to_string(pac.getScore());
+    scoreText.setString(finalScore);
+    scoreText.setFillColor(Color::Yellow);
+
+    Texture pacLivesT;
+    pacLivesT.loadFromFile("data/pacman-left.png");
+
+    CircleShape* livesUI;
+    livesUI = new CircleShape[pac.getLives()];      //to change depending on level / starting level count
+    for (int i = 0; i < pac.getLives(); i++)
+    {
+        livesUI[i].setTexture(&pacLivesT);
+        livesUI[i].setRadius(pac.pacman.getSize().x / 2.0f);
+        livesUI[i].setPosition((i+7.5) * 37.5f, 23 * 38.2f);
+    }
 
     Maze maze("data/maze2.txt", "data/tile.png", "data/pellet.png");
     
@@ -61,8 +86,6 @@ int main()
                     if (maze.bitmap[pac.getposI()][pac.getposJ() - 1] != -1)
                     {
                         row = 0;
-                        //pac.pacman.setRotation(0.0f);
-						//pac.pacman.setTexture(&pac.tL);
                         pac.direction = Vector2i(-1, 0);
                     }
                     break;
@@ -70,7 +93,6 @@ int main()
                     if (maze.bitmap[pac.getposI()][pac.getposJ() + 1] != -1)
                     {
                         row = 1;
-						//pac.pacman.setTexture(&pac.tR);
                         pac.direction = Vector2i(1, 0);
                     }
                     break;
@@ -78,7 +100,6 @@ int main()
                     if (maze.bitmap[pac.getposI() - 1][pac.getposJ()] != -1)
                     {
                         row = 2;
-						//pac.pacman.setTexture(&pac.tU);
                         pac.direction = Vector2i(0, -1);
                     }
                     break;
@@ -86,7 +107,6 @@ int main()
                     if (maze.bitmap[pac.getposI() + 1][pac.getposJ()] != -1)
                     {
                         row = 3;
-						//pac.pacman.setTexture(&pac.tD);
                         pac.direction = Vector2i(0, 1);
                     }
                     break;
@@ -129,7 +149,6 @@ int main()
         {
             if (ghostobj.posIs[i] == pac.getposI() && ghostobj.posJs[i] == pac.getposJ()) {
                 pac.eat(ghostobj, i);
-                cout << pac.getScore() << endl;
             }
         }
 
@@ -148,10 +167,19 @@ int main()
             */
             //}
 
+        //score display
+        finalScore = "SCORE: " + to_string(pac.getScore());
+        scoreText.setString(finalScore);
+        
         animation.Update(row, deltaTime);
         pac.pacman.setTextureRect(animation.uvRect);
 
         window.clear();
+        for (int i = 0; i < pac.getLives(); i++)
+            window.draw(livesUI[i]);
+
+        window.draw(scoreText);
+        window.draw(remLives);
         for (int i = 0; i < sizey; i++)
         {
             for (int j = 0; j < sizex; j++)

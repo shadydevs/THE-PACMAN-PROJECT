@@ -24,7 +24,8 @@ void ghost::matrix()
 	//	{
 	//		cout << grid[i][j];
 	//	}
-	//
+	//	cout<<endl;
+	//}
 }
 //Basic point struct
 struct basicPoint
