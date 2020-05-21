@@ -14,18 +14,21 @@ int main()
 
 	Pacman pac;
     Animation animation(&pac.spriteSheet, Vector2u(3, 4), 0.4f);
-   
+    
     int row = 0;
     float deltaTime = 0.0f;
-    Clock clock;
+    Clock animClock;
     
     pac.pacman.setTextureRect(animation.uvRect);
 	
     ghost ghostobj;
     ghostobj.setghosts();
     
-    //Player player;
-    ofstream playersInfo;
+    ////Player player;
+    //ofstream playersInfo;
+    
+    int initialSuperPelletTime = 35;
+    int superPelletTime = initialSuperPelletTime;
 
     //UI ELEMENTS
     Font arial;
@@ -67,7 +70,7 @@ int main()
     int ghostTurn;
     while (window.isOpen())
     {
-        deltaTime = clock.restart().asSeconds();
+        deltaTime = animClock.restart().asSeconds();
 
         Event evnt;
         while (window.pollEvent(evnt))
@@ -118,6 +121,16 @@ int main()
             }
         }
         pac.movePacman(maze.bitmap);
+        if (pac.superModeOn) {
+            if (superPelletTime <= 0)       //super mode time is over
+            {
+                superPelletTime = initialSuperPelletTime;
+                pac.superModeOn = false;
+            }
+            else {
+                superPelletTime--;          //countdown for super pellet time
+            }
+        }
         //do_bfs(&ghostobj, pac.getposI(), pac.getposJ());      //triggers infinite loop
 
         for (int i = 0; i < 4; i++)
@@ -143,7 +156,7 @@ int main()
         }
 
         ghostobj.moveGhost(maze.bitmap);
-        pac.eatPellet(maze.bitmap, maze.mazeSprites);
+        pac.eat(maze.bitmap, maze.mazeSprites);
 
         for (int i = 0; i < 4; i++)
         {

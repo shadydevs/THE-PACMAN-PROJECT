@@ -82,7 +82,7 @@ void Pacman::eat(ghost& g, int i)
 	}
 }
 
-void Pacman::eatPellet(int bitmap[][19], Sprite mazeSprites[][19])
+void Pacman::eat(int bitmap[][19], Sprite mazeSprites[][19])
 {
 	if (bitmap[posI][posJ] == 1)
 	{
@@ -93,7 +93,6 @@ void Pacman::eatPellet(int bitmap[][19], Sprite mazeSprites[][19])
 		score += 10;
 		updateScore();
 		mazeSprites[posI][posJ].setColor(Color::Black);
-		
 	}
 	else if(bitmap[posI][posJ] == 2)
 	{

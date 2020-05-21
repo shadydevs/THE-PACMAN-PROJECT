@@ -25,7 +25,7 @@ public:
 	int getScore();
 	void updateScore();
 	int getLives();
-	void eatPellet(int bitmap[][19], Sprite mazeSprites[][19]);
+	void eat(int bitmap[][19], Sprite mazeSprites[][19]);
 	void updateLives();
 	void movePacman(int bitmap[21][19]);
 	void eat(ghost& g, int i);
