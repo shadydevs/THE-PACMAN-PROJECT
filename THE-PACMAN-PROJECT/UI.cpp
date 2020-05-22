@@ -39,7 +39,7 @@ void UI::display(sf::RenderWindow& window, Pacman pac, float pelletTimer)		// fu
 	{
 		if (i == 2 && pac.superModeOn)
 		{
-			element[i].setString("power left: " + to_string(int(pelletTimer) + 1));
+			element[i].setString("power left: " + to_string(int(pelletTimer)));
 			window.draw(element[i]);
 		}
 		window.draw(element[i]);
