@@ -2,8 +2,8 @@
 #include <iostream>
 #include <fstream>
 #include "Maze.h"
-#include "Pacman.h"
 #include "Animation.h"
+#include "UI.h"
 using namespace sf;
 using namespace std;
 
@@ -27,38 +27,10 @@ int main()
     ////Player player;
     //ofstream playersInfo;
     
-    int initialSuperPelletTime = 35;
-    int superPelletTime = initialSuperPelletTime;
+    UI ui(pac);
 
-    //UI ELEMENTS
-    Font arial;
-    arial.loadFromFile("data/arial.ttf");
-
-    Text remLives;
-    remLives.setFont(arial);
-    remLives.setFillColor(Color::Yellow);
-    remLives.setPosition(0.0f, 23 * 38.0f);
-    remLives.setString("REMAINING LIVES: ");
-
-    Text scoreText;
-    scoreText.setFont(arial);
-    scoreText.setPosition(0.0f, 0.0f);
-    string finalScore;
-    finalScore = "SCORE: " + to_string(pac.getScore());
-    scoreText.setString(finalScore);
-    scoreText.setFillColor(Color::Yellow);
-
-    Texture pacLivesT;
-    pacLivesT.loadFromFile("data/pacman-left.png");
-
-    CircleShape* livesUI;
-    livesUI = new CircleShape[pac.getLives()];      //to change depending on level / starting level count
-    for (int i = 0; i < pac.getLives(); i++)
-    {
-        livesUI[i].setTexture(&pacLivesT);
-        livesUI[i].setRadius(pac.pacman.getSize().x / 2.0f);
-        livesUI[i].setPosition((i+7.5) * 37.5f, 23 * 38.2f);
-    }
+    float initialSuperPelletTime = 35.0;
+    float superPelletTime = initialSuperPelletTime;
 
     Maze maze("data/maze2.txt", "data/tile.png", "data/pellet.png");
     
@@ -180,19 +152,11 @@ int main()
             */
             //}
 
-        //score display
-        finalScore = "SCORE: " + to_string(pac.getScore());
-        scoreText.setString(finalScore);
-        
         animation.Update(row, deltaTime);
         pac.pacman.setTextureRect(animation.uvRect);
 
         window.clear();
-        for (int i = 0; i < pac.getLives(); i++)
-            window.draw(livesUI[i]);
-
-        window.draw(scoreText);
-        window.draw(remLives);
+        ui.display(window, pac, superPelletTime / 7.0f);      // 7 is the framerate so each 7 frames
         for (int i = 0; i < sizey; i++)
         {
             for (int j = 0; j < sizex; j++)
